@@ -1,0 +1,9 @@
+# Serving + training. Versions are pinned because models/model.joblib is a pickle
+# and must be loaded with the same library versions it was trained with.
+fastapi==0.142.2
+uvicorn==0.52.4
+lightgbm==4.7.0
+scikit-learn==1.9.1
+pandas==3.0.5
+numpy==2.5.3
+joblib==1.6.0

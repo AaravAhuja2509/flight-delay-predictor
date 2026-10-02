@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flight Delay Predictor</title>
+<style>
+  :root {
+    --bg: #f4f1ea; --card: #fffdf8; --ink: #1d2433; --muted: #6b7280; --line: #e3ddd0;
+    --accent: #1f4fd8; --low: #1f8a5b; --mod: #c98a0b; --high: #c8372d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11151f; --card: #1a2030; --ink: #eef1f7; --muted: #99a3b8; --line: #2a3248;
+            --accent: #6d94ff; --low: #43c58a; --mod: #e6b04a; --high: #ff6a5f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 56px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+  .full { grid-column: 1 / -1; }
+  label { display: block; font-size: .8rem; font-weight: 600; color: var(--muted);
+          text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+  input, select { width: 100%; font: inherit; color: var(--ink); background: var(--bg);
+                  border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px; }
+  input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button { grid-column: 1 / -1; font: inherit; font-weight: 600; color: #fff; background: var(--accent);
+           border: 0; border-radius: 10px; padding: 12px; cursor: pointer; }
+  button:disabled { opacity: .55; cursor: not-allowed; }
+  .hint { font-size: .8rem; color: var(--muted); margin-top: 3px; }
+  #error { color: var(--high); margin-top: 12px; display: none; }
+  #result { margin-top: 20px; display: none; }
+  .verdict { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .verdict h2 { margin: 0; font-size: 1.5rem; }
+  .pct { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.03em; }
+  .bar { position: relative; height: 12px; border-radius: 99px; margin: 14px 0 6px;
+         background: linear-gradient(90deg, var(--low), var(--mod) 55%, var(--high)); }
+  .tick { position: absolute; top: -5px; width: 4px; height: 22px; border-radius: 2px; background: var(--ink); }
+  .avg { position: absolute; top: -3px; width: 2px; height: 18px; background: var(--ink); opacity: .45; }
+  .scale { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); }
+  ul { list-style: none; padding: 0; margin: 12px 0 0; }
+  li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .up { color: var(--high); } .down { color: var(--low); }
+  .note { font-size: .8rem; color: var(--muted); margin-top: 14px; }
+  @media (max-width: 520px) { form { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Flight Delay Predictor</h1>
+  <p class="sub">Enter a scheduled US domestic flight to estimate the chance it lands 15+ minutes late.</p>
+
+  <div class="card">
+    <form id="f" autocomplete="off">
+      <div><label for="origin">From (airport code)</label>
+        <input id="origin" list="origins" placeholder="e.g. JFK" maxlength="3" required>
+        <datalist id="origins"></datalist></div>
+      <div><label for="dest">To (airport code)</label>
+        <input id="dest" list="dests" placeholder="e.g. LAX" maxlength="3" required>
+        <datalist id="dests"></datalist></div>
+      <div class="full"><label for="carrier">Airline</label>
+        <select id="carrier" required><option value="">Choose a route first</option></select>
+        <div class="hint" id="routehint"></div></div>
+      <div><label for="date">Date</label><input id="date" type="date" required></div>
+      <div><label for="dep">Scheduled departure (local)</label><input id="dep" type="time" value="17:30" required></div>
+      <div><label for="arr">Scheduled arrival (local)</label><input id="arr" type="time" value="20:45" required></div>
+      <button id="go" type="submit" disabled>Predict</button>
+    </form>
+    <div id="error"></div>
+  </div>
+
+  <div class="card" id="result">
+    <div class="verdict"><h2 id="vtext"></h2><div class="pct" id="pct"></div></div>
+    <div class="bar"><div class="avg" id="avg"></div><div class="tick" id="tick"></div></div>
+    <div class="scale"><span>0%</span><span id="avglabel"></span><span>60%+</span></div>
+    <ul id="factors"></ul>
+    <p class="note" id="note"></p>
+  </div>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+let routes = {}, origins = {};
+
+fetch("/api/options").then(r => r.json()).then(d => {
+  routes = d.routes;
+  Object.keys(routes).forEach(k => { const [o, t] = k.split("-"); (origins[o] ||= []).push(t); });
+  $("origins").innerHTML = Object.keys(origins).sort().map(o => `<option value="${o}">`).join("");
+  $("go").disabled = false;
+});
+
+function refresh() {
+  const o = $("origin").value.toUpperCase(), t = $("dest").value.toUpperCase();
+  $("dests").innerHTML = (origins[o] || []).sort().map(d => `<option value="${d}">`).join("");
+  const cars = routes[`${o}-${t}`];
+  const sel = $("carrier");
+  if (cars) {
+    sel.innerHTML = cars.map(c => `<option>${c}</option>`).join("");
+    $("routehint").textContent = `${cars.length} airline${cars.length > 1 ? "s" : ""} in the data for ${o} → ${t}`;
+  } else {
+    sel.innerHTML = `<option value="">${o.length === 3 && t.length === 3 ? "No data for this route" : "Choose a route first"}</option>`;
+    $("routehint").textContent = o.length === 3 && !origins[o] ? "Airport not in the US dataset" : "";
+  }
+}
+$("origin").addEventListener("input", refresh);
+$("dest").addEventListener("input", refresh);
+$("date").value = new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10);
+
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  $("error").style.display = "none";
+  $("go").disabled = true; $("go").textContent = "Predicting…";
+  try {
+    const res = await fetch("/api/predict", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ carrier: $("carrier").value, origin: $("origin").value.toUpperCase(),
+        dest: $("dest").value.toUpperCase(), date: $("date").value, dep_time: $("dep").value, arr_time: $("arr").value })
+    });
+    const d = await res.json();
+    if (!res.ok) throw new Error(typeof d.detail === "string" ? d.detail : "Please check the form fields.");
+    show(d);
+  } catch (err) {
+    $("error").textContent = err.message; $("error").style.display = "block";
+  } finally { $("go").disabled = false; $("go").textContent = "Predict"; }
+});
+
+function show(d) {
+  const colour = { Low: "var(--low)", Moderate: "var(--mod)", High: "var(--high)" }[d.risk];
+  $("vtext").textContent = d.likely_delayed ? "Likely delayed" : "Likely on time";
+  $("vtext").style.color = colour;
+  $("pct").textContent = Math.round(d.probability * 100) + "%";
+  $("pct").style.color = colour;
+  const pos = x => Math.min(x / 0.6, 1) * 100 + "%";
+  $("tick").style.left = `calc(${pos(d.probability)} - 2px)`;
+  $("avg").style.left = pos(d.average_flight_probability);
+  $("avglabel").textContent = `average flight ${Math.round(d.average_flight_probability * 100)}%`;
+  $("factors").innerHTML = d.factors.map(f =>
+    `<li><span>${f.text}</span><span class="${f.weight > 0 ? "up" : "down"}">${f.weight > 0 ? "▲" : "▼"} ${f.effect}</span></li>`).join("");
+  $("note").textContent = `${d.risk} risk. ${d.note}`;
+  $("result").style.display = "block";
+  $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "results": [
+    {
+      "model": "Always 'on time' (baseline)",
+      "roc_auc": 0.5,
+      "pr_auc": 0.1475,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "threshold": null,
+      "train_seconds": 0.0
+    },
+    {
+      "model": "Logistic regression",
+      "roc_auc": 0.6067,
+      "pr_auc": 0.2068,
+      "precision": 0.2222,
+      "recall": 0.2915,
+      "f1": 0.2521,
+      "threshold": 0.259,
+      "train_seconds": 8.5
+    },
+    {
+      "model": "Random forest (120k rows)",
+      "roc_auc": 0.6031,
+      "pr_auc": 0.1979,
+      "precision": 0.1965,
+      "recall": 0.4604,
+      "f1": 0.2754,
+      "threshold": 0.233,
+      "train_seconds": 9.9
+    },
+    {
+      "model": "LightGBM (52 trees)",
+      "roc_auc": 0.6207,
+      "pr_auc": 0.2192,
+      "precision": 0.2424,
+      "recall": 0.2602,
+      "f1": 0.251,
+      "threshold": 0.222,
+      "train_seconds": 4.4
+    }
+  ],
+  "feature_importance_gain": {
+    "Dest": 0.1883,
+    "DepMinuteOfDay": 0.1728,
+    "Origin": 0.1654,
+    "Month": 0.1517,
+    "Carrier": 0.0942,
+    "ArrHour": 0.0659,
+    "DaysToHoliday": 0.0547,
+    "DepHour": 0.0484,
+    "DayOfWeek": 0.0397,
+    "CRSElapsedTime": 0.0083,
+    "Distance": 0.0063,
+    "IsHoliday": 0.0024,
+    "IsWeekend": 0.0019
+  }
+}

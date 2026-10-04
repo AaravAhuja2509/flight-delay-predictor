@@ -1,0 +1,2538 @@
+{
+"ATL": {
+"lat": 33.6367,
+"lon": -84.4281,
+"name": "Hartsfield Jackson Atlanta International Airport",
+"city": "Atlanta",
+"flights_in_sample": 63886,
+"weather": true
+},
+"ORD": {
+"lat": 41.9786,
+"lon": -87.9048,
+"name": "Chicago O'Hare International Airport",
+"city": "Chicago",
+"flights_in_sample": 47067,
+"weather": true
+},
+"DEN": {
+"lat": 39.86,
+"lon": -104.6738,
+"name": "Denver International Airport",
+"city": "Denver",
+"flights_in_sample": 39919,
+"weather": true
+},
+"LAX": {
+"lat": 33.9425,
+"lon": -118.408,
+"name": "Los Angeles International Airport",
+"city": "Los Angeles",
+"flights_in_sample": 38104,
+"weather": true
+},
+"DFW": {
+"lat": 32.8968,
+"lon": -97.038,
+"name": "Dallas Fort Worth International Airport",
+"city": "Dallas-Fort Worth",
+"flights_in_sample": 32045,
+"weather": true
+},
+"SFO": {
+"lat": 37.6198,
+"lon": -122.3748,
+"name": "San Francisco International Airport",
+"city": "San Francisco",
+"flights_in_sample": 30570,
+"weather": true
+},
+"PHX": {
+"lat": 33.4353,
+"lon": -112.0059,
+"name": "Phoenix Sky Harbor International Airport",
+"city": "Phoenix",
+"flights_in_sample": 27570,
+"weather": true
+},
+"LAS": {
+"lat": 36.0834,
+"lon": -115.1518,
+"name": "Harry Reid International Airport",
+"city": "Las Vegas",
+"flights_in_sample": 26944,
+"weather": true
+},
+"SEA": {
+"lat": 47.4479,
+"lon": -122.3103,
+"name": "Seattle\u2013Tacoma International Airport",
+"city": "Seattle",
+"flights_in_sample": 24230,
+"weather": true
+},
+"MSP": {
+"lat": 44.8801,
+"lon": -93.2217,
+"name": "Minneapolis\u2013Saint Paul International Airport / Wold\u2013Chamberlain Field",
+"city": "Minneapolis",
+"flights_in_sample": 24063,
+"weather": true
+},
+"MCO": {
+"lat": 28.4294,
+"lon": -81.309,
+"name": "Orlando International Airport",
+"city": "Orlando",
+"flights_in_sample": 23094,
+"weather": true
+},
+"DTW": {
+"lat": 42.2138,
+"lon": -83.3538,
+"name": "Detroit Metropolitan Wayne County Airport",
+"city": "Detroit",
+"flights_in_sample": 22468,
+"weather": true
+},
+"IAH": {
+"lat": 29.9844,
+"lon": -95.3414,
+"name": "George Bush Intercontinental Airport",
+"city": "Houston",
+"flights_in_sample": 22444,
+"weather": true
+},
+"BOS": {
+"lat": 42.362,
+"lon": -71.0079,
+"name": "Boston Logan International Airport",
+"city": "Boston",
+"flights_in_sample": 21829,
+"weather": true
+},
+"EWR": {
+"lat": 40.6894,
+"lon": -74.1705,
+"name": "Newark Liberty International Airport",
+"city": "Newark",
+"flights_in_sample": 20291,
+"weather": true
+},
+"CLT": {
+"lat": 35.214,
+"lon": -80.9431,
+"name": "Charlotte Douglas International Airport",
+"city": "Charlotte",
+"flights_in_sample": 20056,
+"weather": true
+},
+"SLC": {
+"lat": 40.7889,
+"lon": -111.9799,
+"name": "Salt Lake City International Airport",
+"city": "Salt Lake City",
+"flights_in_sample": 19960,
+"weather": true
+},
+"BWI": {
+"lat": 39.1754,
+"lon": -76.6683,
+"name": "Baltimore/Washington International Thurgood Marshall Airport",
+"city": "Baltimore",
+"flights_in_sample": 17496,
+"weather": true
+},
+"JFK": {
+"lat": 40.6394,
+"lon": -73.7793,
+"name": "John F. Kennedy International Airport",
+"city": "New York",
+"flights_in_sample": 16669,
+"weather": true
+},
+"LGA": {
+"lat": 40.7772,
+"lon": -73.8726,
+"name": "LaGuardia Airport",
+"city": "New York",
+"flights_in_sample": 16317,
+"weather": true
+},
+"FLL": {
+"lat": 26.0726,
+"lon": -80.1527,
+"name": "Fort Lauderdale Hollywood International Airport",
+"city": "Fort Lauderdale",
+"flights_in_sample": 15530,
+"weather": true
+},
+"MDW": {
+"lat": 41.786,
+"lon": -87.7524,
+"name": "Chicago Midway International Airport",
+"city": "Chicago",
+"flights_in_sample": 15469,
+"weather": true
+},
+"SAN": {
+"lat": 32.7336,
+"lon": -117.19,
+"name": "San Diego International Airport",
+"city": "San Diego",
+"flights_in_sample": 14772,
+"weather": true
+},
+"DCA": {
+"lat": 38.8521,
+"lon": -77.0377,
+"name": "Ronald Reagan Washington National Airport",
+"city": "Washington",
+"flights_in_sample": 13327,
+"weather": true
+},
+"PHL": {
+"lat": 39.8719,
+"lon": -75.2411,
+"name": "Philadelphia International Airport",
+"city": "Philadelphia",
+"flights_in_sample": 12944,
+"weather": true
+},
+"DAL": {
+"lat": 32.8448,
+"lon": -96.8477,
+"name": "Dallas Love Field",
+"city": "Dallas",
+"flights_in_sample": 12350,
+"weather": true
+},
+"TPA": {
+"lat": 27.9755,
+"lon": -82.5332,
+"name": "Tampa International Airport",
+"city": "Tampa",
+"flights_in_sample": 12269,
+"weather": true
+},
+"MIA": {
+"lat": 25.796,
+"lon": -80.2898,
+"name": "Miami International Airport",
+"city": "Miami",
+"flights_in_sample": 11975,
+"weather": true
+},
+"PDX": {
+"lat": 45.5887,
+"lon": -122.598,
+"name": "Portland International Airport",
+"city": "Portland",
+"flights_in_sample": 11293,
+"weather": true
+},
+"STL": {
+"lat": 38.7487,
+"lon": -90.37,
+"name": "St. Louis Lambert International Airport",
+"city": "St Louis",
+"flights_in_sample": 9943,
+"weather": true
+},
+"BNA": {
+"lat": 36.1245,
+"lon": -86.6782,
+"name": "Nashville International Airport",
+"city": "Nashville",
+"flights_in_sample": 9765,
+"weather": true
+},
+"AUS": {
+"lat": 30.1975,
+"lon": -97.662,
+"name": "Austin Bergstrom International Airport",
+"city": "Austin",
+"flights_in_sample": 9329,
+"weather": true
+},
+"HOU": {
+"lat": 29.6453,
+"lon": -95.2768,
+"name": "William P. Hobby Airport",
+"city": "Houston",
+"flights_in_sample": 9303,
+"weather": true
+},
+"OAK": {
+"lat": 37.7201,
+"lon": -122.2212,
+"name": "Oakland San Francisco Bay Airport",
+"city": "Oakland",
+"flights_in_sample": 8927,
+"weather": true
+},
+"SJC": {
+"lat": 37.3625,
+"lon": -121.9292,
+"name": "Mineta San Jose International Airport",
+"city": "San Jose",
+"flights_in_sample": 8722,
+"weather": true
+},
+"HNL": {
+"lat": 21.3184,
+"lon": -157.9257,
+"name": "Daniel K. Inouye International Airport",
+"city": "Honolulu, Oahu",
+"flights_in_sample": 8575,
+"weather": true
+},
+"MSY": {
+"lat": 29.9934,
+"lon": -90.2647,
+"name": "Louis Armstrong New Orleans International Airport",
+"city": "New Orleans",
+"flights_in_sample": 8278,
+"weather": true
+},
+"SMF": {
+"lat": 38.6954,
+"lon": -121.591,
+"name": "Sacramento International Airport",
+"city": "Sacramento",
+"flights_in_sample": 7892,
+"weather": true
+},
+"MCI": {
+"lat": 39.3017,
+"lon": -94.7139,
+"name": "Kansas City International Airport",
+"city": "Kansas City",
+"flights_in_sample": 7871,
+"weather": true
+},
+"SNA": {
+"lat": 33.6751,
+"lon": -117.8693,
+"name": "John Wayne Orange County International Airport",
+"city": "Santa Ana",
+"flights_in_sample": 7399,
+"weather": true
+},
+"IAD": {
+"lat": 38.9445,
+"lon": -77.4558,
+"name": "Washington Dulles International Airport",
+"city": "Dulles",
+"flights_in_sample": 6452,
+"weather": true
+},
+"CLE": {
+"lat": 41.4117,
+"lon": -81.8498,
+"name": "Cleveland Hopkins International Airport",
+"city": "Cleveland",
+"flights_in_sample": 6391,
+"weather": true
+},
+"RDU": {
+"lat": 35.8787,
+"lon": -78.7873,
+"name": "Raleigh-Durham International Airport",
+"city": "Raleigh/Durham",
+"flights_in_sample": 6079,
+"weather": true
+},
+"SAT": {
+"lat": 29.5337,
+"lon": -98.4698,
+"name": "San Antonio International Airport",
+"city": "San Antonio",
+"flights_in_sample": 5761,
+"weather": true
+},
+"RSW": {
+"lat": 26.5347,
+"lon": -81.7528,
+"name": "Southwest Florida International Airport",
+"city": "Fort Myers",
+"flights_in_sample": 5369,
+"weather": true
+},
+"MKE": {
+"lat": 42.9472,
+"lon": -87.8966,
+"name": "General Mitchell International Airport",
+"city": "Milwaukee",
+"flights_in_sample": 5333,
+"weather": true
+},
+"PIT": {
+"lat": 40.4915,
+"lon": -80.2329,
+"name": "Pittsburgh International Airport",
+"city": "Pittsburgh",
+"flights_in_sample": 4914,
+"weather": true
+},
+"IND": {
+"lat": 39.7173,
+"lon": -86.2944,
+"name": "Indianapolis International Airport",
+"city": "Indianapolis",
+"flights_in_sample": 4846,
+"weather": true
+},
+"BUR": {
+"lat": 34.2028,
+"lon": -118.3581,
+"name": "Hollywood Burbank/Bob Hope Airport",
+"city": "Burbank",
+"flights_in_sample": 4371,
+"weather": true
+},
+"SJU": {
+"lat": 18.4394,
+"lon": -66.0018,
+"name": "Luis Munoz Marin International Airport",
+"city": "San Juan",
+"flights_in_sample": 4341,
+"weather": true
+},
+"OGG": {
+"lat": 20.8963,
+"lon": -156.4318,
+"name": "Kahului International Airport",
+"city": "Kahului",
+"flights_in_sample": 4322,
+"weather": true
+},
+"CMH": {
+"lat": 39.998,
+"lon": -82.8919,
+"name": "John Glenn Columbus International Airport",
+"city": "Columbus",
+"flights_in_sample": 4303,
+"weather": true
+},
+"PBI": {
+"lat": 26.6832,
+"lon": -80.0956,
+"name": "Palm Beach International Airport",
+"city": "West Palm Beach",
+"flights_in_sample": 4271,
+"weather": true
+},
+"BDL": {
+"lat": 41.9386,
+"lon": -72.688,
+"name": "Bradley International Airport",
+"city": "Hartford",
+"flights_in_sample": 3850,
+"weather": true
+},
+"ONT": {
+"lat": 34.056,
+"lon": -117.601,
+"name": "Ontario International Airport",
+"city": "Ontario",
+"flights_in_sample": 3650,
+"weather": true
+},
+"OMA": {
+"lat": 41.3032,
+"lon": -95.8941,
+"name": "Eppley Airfield",
+"city": "Omaha",
+"flights_in_sample": 3459,
+"weather": true
+},
+"CVG": {
+"lat": 39.0488,
+"lon": -84.6678,
+"name": "Cincinnati Northern Kentucky International Airport",
+"city": "Cincinnati / Covington",
+"flights_in_sample": 3378,
+"weather": true
+},
+"ABQ": {
+"lat": 35.04,
+"lon": -106.6089,
+"name": "Albuquerque International Sunport",
+"city": "Albuquerque",
+"flights_in_sample": 3262,
+"weather": true
+},
+"ANC": {
+"lat": 61.179,
+"lon": -149.9926,
+"name": "Ted Stevens Anchorage International Airport",
+"city": "Anchorage",
+"flights_in_sample": 3158,
+"weather": true
+},
+"BUF": {
+"lat": 42.9405,
+"lon": -78.7322,
+"name": "Buffalo Niagara International Airport",
+"city": "Buffalo",
+"flights_in_sample": 3124,
+"weather": true
+},
+"JAX": {
+"lat": 30.4925,
+"lon": -81.6878,
+"name": "Jacksonville International Airport",
+"city": "Jacksonville",
+"flights_in_sample": 2943,
+"weather": true
+},
+"LGB": {
+"lat": 33.8165,
+"lon": -118.1499,
+"name": "Long Beach International Airport",
+"city": "Long Beach",
+"flights_in_sample": 2871,
+"weather": true
+},
+"TUS": {
+"lat": 32.115,
+"lon": -110.9381,
+"name": "Tucson International Airport",
+"city": "Tucson",
+"flights_in_sample": 2838,
+"weather": true
+},
+"BOI": {
+"lat": 43.5644,
+"lon": -116.223,
+"name": "Boise Air Terminal/Gowen Field",
+"city": "Boise",
+"flights_in_sample": 2825,
+"weather": true
+},
+"RIC": {
+"lat": 37.5052,
+"lon": -77.3197,
+"name": "Richmond International Airport",
+"city": "Richmond",
+"flights_in_sample": 2777,
+"weather": true
+},
+"RNO": {
+"lat": 39.4991,
+"lon": -119.768,
+"name": "Reno Tahoe International Airport",
+"city": "Reno",
+"flights_in_sample": 2748,
+"weather": true
+},
+"OKC": {
+"lat": 35.3934,
+"lon": -97.5982,
+"name": "OKC Will Rogers World Airport",
+"city": "Oklahoma City",
+"flights_in_sample": 2619,
+"weather": true
+},
+"MEM": {
+"lat": 35.0438,
+"lon": -89.9763,
+"name": "Frederick W. Smith International Airport",
+"city": "Memphis",
+"flights_in_sample": 2588,
+"weather": true
+},
+"TUL": {
+"lat": 36.1971,
+"lon": -95.8862,
+"name": "Tulsa International Airport",
+"city": "Tulsa",
+"flights_in_sample": 2434,
+"weather": true
+},
+"KOA": {
+"lat": 19.7388,
+"lon": -156.0456,
+"name": "Ellison Onizuka Kona International Airport at Ke\u0101hole",
+"city": "Kailua-Kona",
+"flights_in_sample": 2399,
+"weather": true
+},
+"PVD": {
+"lat": 41.725,
+"lon": -71.4257,
+"name": "Rhode Island T. F. Green International Airport",
+"city": "Providence/Warwick",
+"flights_in_sample": 2380,
+"weather": true
+},
+"CHS": {
+"lat": 32.8962,
+"lon": -80.0382,
+"name": "Charleston International Airport",
+"city": "Charleston",
+"flights_in_sample": 2316,
+"weather": true
+},
+"LIH": {
+"lat": 21.9744,
+"lon": -159.3371,
+"name": "Lihue Airport",
+"city": "Lihue, Kauai",
+"flights_in_sample": 2211,
+"weather": true
+},
+"GEG": {
+"lat": 47.6199,
+"lon": -117.534,
+"name": "Spokane International Airport",
+"city": "Spokane",
+"flights_in_sample": 2078,
+"weather": true
+},
+"BHM": {
+"lat": 33.5629,
+"lon": -86.7507,
+"name": "Birmingham-Shuttlesworth International Airport",
+"city": "Birmingham",
+"flights_in_sample": 2068,
+"weather": true
+},
+"ORF": {
+"lat": 36.8953,
+"lon": -76.201,
+"name": "Norfolk International Airport",
+"city": "Norfolk",
+"flights_in_sample": 1947,
+"weather": true
+},
+"GRR": {
+"lat": 42.8808,
+"lon": -85.5228,
+"name": "Gerald R. Ford International Airport",
+"city": "Grand Rapids",
+"flights_in_sample": 1927,
+"weather": true
+},
+"ELP": {
+"lat": 31.8099,
+"lon": -106.3756,
+"name": "El Paso International Airport",
+"city": "El Paso",
+"flights_in_sample": 1898,
+"weather": true
+},
+"SDF": {
+"lat": 38.1706,
+"lon": -85.7351,
+"name": "Louisville Muhammad Ali International Airport",
+"city": "Louisville",
+"flights_in_sample": 1752,
+"weather": true
+},
+"ALB": {
+"lat": 42.7483,
+"lon": -73.8017,
+"name": "Albany International Airport",
+"city": "Albany",
+"flights_in_sample": 1668,
+"weather": true
+},
+"PSP": {
+"lat": 33.8297,
+"lon": -116.507,
+"name": "Palm Springs International Airport",
+"city": "Palm Springs",
+"flights_in_sample": 1639,
+"weather": true
+},
+"MSN": {
+"lat": 43.1399,
+"lon": -89.3375,
+"name": "Dane County Regional Truax Field",
+"city": "Madison",
+"flights_in_sample": 1622,
+"weather": true
+},
+"COS": {
+"lat": 38.8058,
+"lon": -104.701,
+"name": "City of Colorado Springs Municipal Airport",
+"city": "Colorado Springs",
+"flights_in_sample": 1618,
+"weather": true
+},
+"ICT": {
+"lat": 37.6503,
+"lon": -97.4286,
+"name": "Wichita Dwight D. Eisenhower National Airport",
+"city": "Wichita",
+"flights_in_sample": 1495,
+"weather": true
+},
+"FAT": {
+"lat": 36.7758,
+"lon": -119.718,
+"name": "Fresno Yosemite International Airport",
+"city": "Fresno",
+"flights_in_sample": 1455,
+"weather": true
+},
+"DSM": {
+"lat": 41.534,
+"lon": -93.6567,
+"name": "Des Moines International Airport",
+"city": "Des Moines",
+"flights_in_sample": 1399,
+"weather": true
+},
+"LIT": {
+"lat": 34.7292,
+"lon": -92.2236,
+"name": "Bill & Hillary Clinton National Airport/Adams Field",
+"city": "Little Rock",
+"flights_in_sample": 1341,
+"weather": true
+},
+"ROC": {
+"lat": 43.1189,
+"lon": -77.6724,
+"name": "Frederick Douglass Greater Rochester International Airport",
+"city": "Rochester",
+"flights_in_sample": 1319,
+"weather": true
+},
+"SAV": {
+"lat": 32.1266,
+"lon": -81.2,
+"name": "Savannah Hilton Head International Airport",
+"city": "Savannah",
+"flights_in_sample": 1288,
+"weather": true
+},
+"BTR": {
+"lat": 30.5332,
+"lon": -91.1496,
+"name": "Baton Rouge Metropolitan Airport",
+"city": "Baton Rouge",
+"flights_in_sample": 1188,
+"weather": true
+},
+"TYS": {
+"lat": 35.811,
+"lon": -83.994,
+"name": "McGhee Tyson Airport",
+"city": "Knoxville/Maryville",
+"flights_in_sample": 1167,
+"weather": true
+},
+"HPN": {
+"lat": 41.067,
+"lon": -73.7076,
+"name": "Westchester County Airport",
+"city": "White Plains",
+"flights_in_sample": 1152,
+"weather": true
+},
+"ITO": {
+"lat": 19.7214,
+"lon": -155.0454,
+"name": "Hilo International Airport",
+"city": "Hilo",
+"flights_in_sample": 1150,
+"weather": true
+},
+"SYR": {
+"lat": 43.1112,
+"lon": -76.1063,
+"name": "Syracuse Hancock International Airport",
+"city": "Syracuse",
+"flights_in_sample": 1123,
+"weather": true
+},
+"GSP": {
+"lat": 34.8957,
+"lon": -82.2189,
+"name": "Greenville-Spartanburg International Airport",
+"city": "Greenville/Greer/Spartanburg",
+"flights_in_sample": 1120,
+"weather": true
+},
+"PWM": {
+"lat": 43.6462,
+"lon": -70.3093,
+"name": "Portland International Jetport",
+"city": "Portland",
+"flights_in_sample": 1096,
+"weather": true
+},
+"MYR": {
+"lat": 33.6797,
+"lon": -78.9283,
+"name": "Myrtle Beach International Airport",
+"city": "Myrtle Beach",
+"flights_in_sample": 1068,
+"weather": true
+},
+"MHT": {
+"lat": 42.9326,
+"lon": -71.4357,
+"name": "Manchester-Boston Regional Airport",
+"city": "Manchester",
+"flights_in_sample": 1037,
+"weather": true
+},
+"GSO": {
+"lat": 36.0994,
+"lon": -79.9373,
+"name": "Piedmont Triad International Airport",
+"city": "Greensboro",
+"flights_in_sample": 1017,
+"weather": true
+},
+"SBA": {
+"lat": 34.4262,
+"lon": -119.84,
+"name": "Santa Barbara Municipal Airport",
+"city": "Santa Barbara",
+"flights_in_sample": 999,
+"weather": true
+},
+"DAY": {
+"lat": 39.9024,
+"lon": -84.2194,
+"name": "James M. Cox Dayton International Airport",
+"city": "Dayton",
+"flights_in_sample": 994,
+"weather": true
+},
+"CAK": {
+"lat": 40.9161,
+"lon": -81.4422,
+"name": "Akron Canton Regional Airport",
+"city": "Akron",
+"flights_in_sample": 966,
+"weather": true
+},
+"PNS": {
+"lat": 30.4727,
+"lon": -87.1866,
+"name": "Pensacola International Airport",
+"city": "Pensacola",
+"flights_in_sample": 957,
+"weather": true
+},
+"FWA": {
+"lat": 40.9789,
+"lon": -85.1945,
+"name": "Fort Wayne International Airport",
+"city": "Fort Wayne",
+"flights_in_sample": 936,
+"weather": true
+},
+"SBN": {
+"lat": 41.7083,
+"lon": -86.3169,
+"name": "South Bend International Airport",
+"city": "South Bend",
+"flights_in_sample": 935,
+"weather": true
+},
+"CID": {
+"lat": 41.8847,
+"lon": -91.7108,
+"name": "The Eastern Iowa Airport",
+"city": "Cedar Rapids",
+"flights_in_sample": 928,
+"weather": true
+},
+"LEX": {
+"lat": 38.0351,
+"lon": -84.6067,
+"name": "Blue Grass Airport",
+"city": "Lexington",
+"flights_in_sample": 923,
+"weather": true
+},
+"MAF": {
+"lat": 31.9425,
+"lon": -102.202,
+"name": "Midland International Air and Space Port",
+"city": "Midland",
+"flights_in_sample": 913,
+"weather": true
+},
+"XNA": {
+"lat": 36.2819,
+"lon": -94.3068,
+"name": "Northwest Arkansas National Airport",
+"city": "Fayetteville/Springdale/Rogers",
+"flights_in_sample": 908,
+"weather": true
+},
+"ISP": {
+"lat": 40.7963,
+"lon": -73.1017,
+"name": "Long Island MacArthur Airport",
+"city": "Islip",
+"flights_in_sample": 904,
+"weather": true
+},
+"BZN": {
+"lat": 45.7789,
+"lon": -111.1537,
+"name": "Bozeman Yellowstone International Airport",
+"city": "Bozeman",
+"flights_in_sample": 876,
+"weather": true
+},
+"ASE": {
+"lat": 39.2232,
+"lon": -106.869,
+"name": "Aspen-Pitkin County Airport (Sardy Field)",
+"city": "Aspen",
+"flights_in_sample": 852,
+"weather": true
+},
+"SHV": {
+"lat": 32.4447,
+"lon": -93.8267,
+"name": "Shreveport Regional Airport",
+"city": "Shreveport",
+"flights_in_sample": 844,
+"weather": true
+},
+"FSD": {
+"lat": 43.5855,
+"lon": -96.7412,
+"name": "Sioux Falls Regional Airport",
+"city": "Sioux Falls",
+"flights_in_sample": 808,
+"weather": true
+},
+"LBB": {
+"lat": 33.6636,
+"lon": -101.823,
+"name": "Lubbock Preston Smith International Airport",
+"city": "Lubbock",
+"flights_in_sample": 788,
+"weather": true
+},
+"JNU": {
+"lat": 58.3549,
+"lon": -134.5744,
+"name": "Juneau International Airport",
+"city": "Juneau",
+"flights_in_sample": 780,
+"weather": true
+},
+"FNT": {
+"lat": 42.9693,
+"lon": -83.7434,
+"name": "Bishop International Airport",
+"city": "Flint",
+"flights_in_sample": 770,
+"weather": true
+},
+"ECP": {
+"lat": 30.3571,
+"lon": -85.7954,
+"name": "Northwest Florida Beaches International Airport",
+"city": "Panama City Beach",
+"flights_in_sample": 765,
+"weather": true
+},
+"JAN": {
+"lat": 32.3112,
+"lon": -90.0759,
+"name": "Jackson-Medgar Wiley Evers International Airport",
+"city": "Jackson",
+"flights_in_sample": 757,
+"weather": true
+},
+"GRB": {
+"lat": 44.4835,
+"lon": -88.1308,
+"name": "Austin Straubel International Airport",
+"city": "Green Bay",
+"flights_in_sample": 747,
+"weather": true
+},
+"HSV": {
+"lat": 34.6362,
+"lon": -86.7744,
+"name": "Huntsville International Airport",
+"city": "Huntsville",
+"flights_in_sample": 743,
+"weather": true
+},
+"STT": {
+"lat": 18.3371,
+"lon": -64.9773,
+"name": "Cyril E. King Airport",
+"city": "Charlotte Amalie",
+"flights_in_sample": 721,
+"weather": true
+},
+"EUG": {
+"lat": 44.1246,
+"lon": -123.212,
+"name": "Eugene Airport",
+"city": "Eugene",
+"flights_in_sample": 712,
+"weather": true
+},
+"CHA": {
+"lat": 35.0353,
+"lon": -85.2038,
+"name": "Chattanooga Metropolitan Airport (Lovell Field)",
+"city": "Chattanooga",
+"flights_in_sample": 707,
+"weather": true
+},
+"PSC": {
+"lat": 46.2647,
+"lon": -119.119,
+"name": "Tri Cities Airport",
+"city": "Pasco",
+"flights_in_sample": 677,
+"weather": true
+},
+"RDM": {
+"lat": 44.2541,
+"lon": -121.15,
+"name": "Roberts Field",
+"city": "Redmond",
+"flights_in_sample": 663,
+"weather": true
+},
+"MOB": {
+"lat": 30.6912,
+"lon": -88.2428,
+"name": "Mobile Regional Airport",
+"city": "Mobile",
+"flights_in_sample": 641,
+"weather": true
+},
+"SBP": {
+"lat": 35.2368,
+"lon": -120.642,
+"name": "San Luis County Regional Airport",
+"city": "San Luis Obispo",
+"flights_in_sample": 622,
+"weather": true
+},
+"CAE": {
+"lat": 33.9382,
+"lon": -81.123,
+"name": "Columbia Metropolitan Airport",
+"city": "Columbia",
+"flights_in_sample": 620,
+"weather": true
+},
+"AVL": {
+"lat": 35.4355,
+"lon": -82.5419,
+"name": "Asheville Regional Airport",
+"city": "Asheville",
+"flights_in_sample": 617,
+"weather": true
+},
+"VPS": {
+"lat": 30.4813,
+"lon": -86.5158,
+"name": "Destin-Fort Walton Beach Airport",
+"city": "Valparaiso",
+"flights_in_sample": 617,
+"weather": true
+},
+"JAC": {
+"lat": 43.6073,
+"lon": -110.738,
+"name": "Jackson Hole Airport",
+"city": "Jackson",
+"flights_in_sample": 614,
+"weather": true
+},
+"ACY": {
+"lat": 39.4562,
+"lon": -74.5775,
+"name": "Atlantic City International Airport",
+"city": "Atlantic City",
+"flights_in_sample": 592,
+"weather": true
+},
+"FAR": {
+"lat": 46.9207,
+"lon": -96.8158,
+"name": "Hector International Airport",
+"city": "Fargo",
+"flights_in_sample": 591,
+"weather": true
+},
+"BIL": {
+"lat": 45.8089,
+"lon": -108.5412,
+"name": "Billings Logan International Airport",
+"city": "Billings",
+"flights_in_sample": 588,
+"weather": true
+},
+"MFR": {
+"lat": 42.3742,
+"lon": -122.873,
+"name": "Rogue Valley International-Medford Airport",
+"city": "Medford",
+"flights_in_sample": 579,
+"weather": true
+},
+"RAP": {
+"lat": 44.0453,
+"lon": -103.057,
+"name": "Rapid City Regional Airport",
+"city": "Rapid City",
+"flights_in_sample": 571,
+"weather": true
+},
+"MDT": {
+"lat": 40.1928,
+"lon": -76.7623,
+"name": "Harrisburg International Airport",
+"city": "Harrisburg",
+"flights_in_sample": 550,
+"weather": true
+},
+"SRQ": {
+"lat": 27.3946,
+"lon": -82.5544,
+"name": "Sarasota Bradenton International Airport",
+"city": "Sarasota/Bradenton",
+"flights_in_sample": 549,
+"weather": true
+},
+"AMA": {
+"lat": 35.2179,
+"lon": -101.7064,
+"name": "Rick Husband Amarillo International Airport",
+"city": "Amarillo",
+"flights_in_sample": 535,
+"weather": true
+},
+"FAI": {
+"lat": 64.8151,
+"lon": -147.856,
+"name": "Fairbanks International Airport",
+"city": "Fairbanks",
+"flights_in_sample": 534,
+"weather": true
+},
+"PIA": {
+"lat": 40.6638,
+"lon": -89.6926,
+"name": "General Wayne A. Downing Peoria International Airport",
+"city": "Peoria",
+"flights_in_sample": 530,
+"weather": true
+},
+"TVC": {
+"lat": 44.7414,
+"lon": -85.5822,
+"name": "Cherry Capital Airport",
+"city": "Traverse City",
+"flights_in_sample": 529,
+"weather": true
+},
+"BTV": {
+"lat": 44.4719,
+"lon": -73.1533,
+"name": "Patrick Leahy Burlington International Airport",
+"city": "Burlington",
+"flights_in_sample": 526,
+"weather": true
+},
+"LNK": {
+"lat": 40.8449,
+"lon": -96.7618,
+"name": "Lincoln Airport",
+"city": "Lincoln",
+"flights_in_sample": 516,
+"weather": true
+},
+"LFT": {
+"lat": 30.2053,
+"lon": -91.9876,
+"name": "Lafayette Regional Airport",
+"city": "Lafayette",
+"flights_in_sample": 496,
+"weather": true
+},
+"SGU": {
+"lat": 37.0364,
+"lon": -113.5103,
+"name": "St George Regional Airport",
+"city": "St George",
+"flights_in_sample": 492,
+"weather": true
+},
+"RST": {
+"lat": 43.9083,
+"lon": -92.5,
+"name": "Rochester International Airport",
+"city": "Rochester",
+"flights_in_sample": 487,
+"weather": true
+},
+"GJT": {
+"lat": 39.1267,
+"lon": -108.5294,
+"name": "Grand Junction Regional Airport",
+"city": "Grand Junction",
+"flights_in_sample": 486,
+"weather": true
+},
+"MLI": {
+"lat": 41.4485,
+"lon": -90.5075,
+"name": "Quad City International Airport",
+"city": "Moline",
+"flights_in_sample": 485,
+"weather": true
+},
+"ATW": {
+"lat": 44.2585,
+"lon": -88.519,
+"name": "Appleton International Airport",
+"city": "Appleton",
+"flights_in_sample": 474,
+"weather": true
+},
+"SGF": {
+"lat": 37.245,
+"lon": -93.3886,
+"name": "Springfield Branson National Airport",
+"city": "Springfield",
+"flights_in_sample": 465,
+"weather": true
+},
+"MRY": {
+"lat": 36.5868,
+"lon": -121.8442,
+"name": "Monterey Regional Airport",
+"city": "Monterey",
+"flights_in_sample": 464,
+"weather": true
+},
+"CRP": {
+"lat": 27.7704,
+"lon": -97.5012,
+"name": "Corpus Christi International Airport",
+"city": "Corpus Christi",
+"flights_in_sample": 464,
+"weather": true
+},
+"DLH": {
+"lat": 46.8419,
+"lon": -92.1987,
+"name": "Duluth International Airport",
+"city": "Duluth",
+"flights_in_sample": 462,
+"weather": true
+},
+"MBS": {
+"lat": 43.5332,
+"lon": -84.0831,
+"name": "MBS International Airport",
+"city": "Freeland",
+"flights_in_sample": 460,
+"weather": true
+},
+"MSO": {
+"lat": 46.9158,
+"lon": -114.0911,
+"name": "Missoula Montana Airport",
+"city": "Missoula",
+"flights_in_sample": 458,
+"weather": true
+},
+"HRL": {
+"lat": 26.2285,
+"lon": -97.6544,
+"name": "Valley International Airport",
+"city": "Harlingen",
+"flights_in_sample": 449,
+"weather": true
+},
+"FCA": {
+"lat": 48.3105,
+"lon": -114.256,
+"name": "Glacier Park International Airport",
+"city": "Kalispell",
+"flights_in_sample": 429,
+"weather": true
+},
+"LAN": {
+"lat": 42.7776,
+"lon": -84.5857,
+"name": "Capital Region International Airport",
+"city": "Lansing",
+"flights_in_sample": 426,
+"weather": true
+},
+"AZO": {
+"lat": 42.2321,
+"lon": -85.5496,
+"name": "Kalamazoo/Battle Creek International Airport",
+"city": "Kalamazoo",
+"flights_in_sample": 426,
+"weather": true
+},
+"GPT": {
+"lat": 30.4056,
+"lon": -89.0698,
+"name": "Gulfport Biloxi International Airport",
+"city": "Gulfport",
+"flights_in_sample": 421,
+"weather": true
+},
+"KTN": {
+"lat": 55.3556,
+"lon": -131.714,
+"name": "Ketchikan International Airport",
+"city": "Ketchikan",
+"flights_in_sample": 411,
+"weather": true
+},
+"MLU": {
+"lat": 32.5109,
+"lon": -92.0377,
+"name": "Monroe Regional Airport",
+"city": "Monroe",
+"flights_in_sample": 404,
+"weather": true
+},
+"BIS": {
+"lat": 46.7727,
+"lon": -100.7469,
+"name": "Bismarck Municipal Airport",
+"city": "Bismarck",
+"flights_in_sample": 399,
+"weather": true
+},
+"AGS": {
+"lat": 33.3699,
+"lon": -81.9645,
+"name": "Augusta Regional At Bush Field",
+"city": "Augusta",
+"flights_in_sample": 392,
+"weather": true
+},
+"IDA": {
+"lat": 43.5146,
+"lon": -112.071,
+"name": "Idaho Falls Regional Airport",
+"city": "Idaho Falls",
+"flights_in_sample": 392,
+"weather": true
+},
+"EVV": {
+"lat": 38.037,
+"lon": -87.5324,
+"name": "Evansville Regional Airport",
+"city": "Evansville",
+"flights_in_sample": 391,
+"weather": true
+},
+"TTN": {
+"lat": 40.2767,
+"lon": -74.8135,
+"name": "Trenton Mercer Airport",
+"city": "Ewing Township",
+"flights_in_sample": 386,
+"weather": true
+},
+"MFE": {
+"lat": 26.1761,
+"lon": -98.238,
+"name": "McAllen Miller International Airport",
+"city": "McAllen",
+"flights_in_sample": 385,
+"weather": true
+},
+"BFL": {
+"lat": 35.4336,
+"lon": -119.057,
+"name": "Meadows Field",
+"city": "Bakersfield",
+"flights_in_sample": 384,
+"weather": true
+},
+"BMI": {
+"lat": 40.4771,
+"lon": -88.9159,
+"name": "Central Illinois Regional Airport at Bloomington-Normal",
+"city": "Bloomington/Normal",
+"flights_in_sample": 374,
+"weather": true
+},
+"ILM": {
+"lat": 34.2723,
+"lon": -77.9051,
+"name": "Wilmington International Airport",
+"city": "Wilmington",
+"flights_in_sample": 372,
+"weather": true
+},
+"ABE": {
+"lat": 40.6518,
+"lon": -75.4428,
+"name": "Lehigh Valley International Airport",
+"city": "Allentown/Bethlehem",
+"flights_in_sample": 372,
+"weather": true
+},
+"CHO": {
+"lat": 38.1386,
+"lon": -78.4529,
+"name": "Charlottesville Albemarle Airport",
+"city": "Charlottesville",
+"flights_in_sample": 370,
+"weather": true
+},
+"TLH": {
+"lat": 30.4012,
+"lon": -84.3543,
+"name": "Tallahassee International Airport",
+"city": "Tallahassee",
+"flights_in_sample": 369,
+"weather": true
+},
+"CRW": {
+"lat": 38.3731,
+"lon": -81.5932,
+"name": "Yeager Airport",
+"city": "Charleston",
+"flights_in_sample": 366,
+"weather": true
+},
+"DAB": {
+"lat": 29.1825,
+"lon": -81.0595,
+"name": "Daytona Beach International Airport",
+"city": "Daytona Beach",
+"flights_in_sample": 365,
+"weather": true
+},
+"LSE": {
+"lat": 43.879,
+"lon": -91.2567,
+"name": "La Crosse Regional Airport",
+"city": "La Crosse",
+"flights_in_sample": 350,
+"weather": true
+},
+"LRD": {
+"lat": 27.5438,
+"lon": -99.4616,
+"name": "Laredo International Airport",
+"city": "Laredo",
+"flights_in_sample": 347,
+"weather": true
+},
+"TRI": {
+"lat": 36.4752,
+"lon": -82.4074,
+"name": "Tri-Cities Regional TN/VA Airport",
+"city": "Blountville",
+"flights_in_sample": 317,
+"weather": true
+},
+"AEX": {
+"lat": 31.3258,
+"lon": -92.5467,
+"name": "Alexandria International Airport",
+"city": "Alexandria",
+"flights_in_sample": 314,
+"weather": true
+},
+"AVP": {
+"lat": 41.3371,
+"lon": -75.7242,
+"name": "Wilkes-Barre/Scranton International Airport",
+"city": "Wilkes-Barre/Scranton",
+"flights_in_sample": 306,
+"weather": true
+},
+"ERI": {
+"lat": 42.0831,
+"lon": -80.1739,
+"name": "Erie International Tom Ridge Field",
+"city": "Erie",
+"flights_in_sample": 296,
+"weather": true
+},
+"BQN": {
+"lat": 18.4949,
+"lon": -67.1294,
+"name": "Rafael Hern\u00e1ndez International Airport",
+"city": "Aguadilla",
+"flights_in_sample": 293,
+"weather": true
+},
+"MOT": {
+"lat": 48.258,
+"lon": -101.2791,
+"name": "Minot International Airport",
+"city": "Minot",
+"flights_in_sample": 289,
+"weather": true
+},
+"HLN": {
+"lat": 46.6068,
+"lon": -111.983,
+"name": "Helena Regional Airport",
+"city": "Helena",
+"flights_in_sample": 288,
+"weather": true
+},
+"GTF": {
+"lat": 47.482,
+"lon": -111.371,
+"name": "Great Falls International Airport",
+"city": "Great Falls",
+"flights_in_sample": 288,
+"weather": true
+},
+"MGM": {
+"lat": 32.3006,
+"lon": -86.394,
+"name": "Montgomery Regional (Dannelly Field) Airport",
+"city": "Montgomery",
+"flights_in_sample": 274,
+"weather": true
+},
+"SCE": {
+"lat": 40.8494,
+"lon": -77.8485,
+"name": "State College Regional Airport",
+"city": "State College",
+"flights_in_sample": 270,
+"weather": true
+},
+"SAF": {
+"lat": 35.6171,
+"lon": -106.089,
+"name": "Santa Fe Municipal Airport",
+"city": "Santa Fe",
+"flights_in_sample": 266,
+"weather": true
+},
+"MLB": {
+"lat": 28.102,
+"lon": -80.6411,
+"name": "Melbourne Orlando International Airport",
+"city": "Melbourne",
+"flights_in_sample": 261,
+"weather": true
+},
+"ROA": {
+"lat": 37.3255,
+"lon": -79.9754,
+"name": "Roanoke\u2013Blacksburg Regional Airport",
+"city": "Roanoke",
+"flights_in_sample": 257,
+"weather": true
+},
+"GRK": {
+"lat": 31.0672,
+"lon": -97.8289,
+"name": "Killeen Regional Airport / Robert Gray Army Airfield",
+"city": "Fort Cavazos",
+"flights_in_sample": 256,
+"weather": true
+},
+"GNV": {
+"lat": 29.6901,
+"lon": -82.2718,
+"name": "Gainesville Regional Airport",
+"city": "Gainesville",
+"flights_in_sample": 244,
+"weather": true
+},
+"EGE": {
+"lat": 39.6426,
+"lon": -106.918,
+"name": "Eagle County Regional Airport",
+"city": "Eagle",
+"flights_in_sample": 242,
+"weather": true
+},
+"CLL": {
+"lat": 30.5886,
+"lon": -96.3638,
+"name": "Easterwood Field",
+"city": "College Station",
+"flights_in_sample": 237,
+"weather": true
+},
+"EYW": {
+"lat": 24.5561,
+"lon": -81.7596,
+"name": "Key West International Airport",
+"city": "Key West",
+"flights_in_sample": 237,
+"weather": true
+},
+"SIT": {
+"lat": 57.0471,
+"lon": -135.362,
+"name": "Sitka Rocky Gutierrez Airport",
+"city": "Sitka",
+"flights_in_sample": 236,
+"weather": true
+},
+"DHN": {
+"lat": 31.3213,
+"lon": -85.4496,
+"name": "Dothan Regional Airport",
+"city": "Dothan",
+"flights_in_sample": 235,
+"weather": true
+},
+"GFK": {
+"lat": 47.9493,
+"lon": -97.1761,
+"name": "Grand Forks International Airport",
+"city": "Grand Forks",
+"flights_in_sample": 231,
+"weather": false
+},
+"FAY": {
+"lat": 34.9912,
+"lon": -78.8803,
+"name": "Fayetteville Regional Airport - Grannis Field",
+"city": "Fayetteville",
+"flights_in_sample": 230,
+"weather": false
+},
+"FLG": {
+"lat": 35.1398,
+"lon": -111.6698,
+"name": "Flagstaff Pulliam Airport",
+"city": "Flagstaff",
+"flights_in_sample": 227,
+"weather": false
+},
+"SWF": {
+"lat": 41.5042,
+"lon": -74.1089,
+"name": "New York Stewart International Airport",
+"city": "Newburgh",
+"flights_in_sample": 227,
+"weather": false
+},
+"SPI": {
+"lat": 39.8441,
+"lon": -89.6779,
+"name": "Abraham Lincoln Capital Airport",
+"city": "Springfield",
+"flights_in_sample": 222,
+"weather": false
+},
+"ACV": {
+"lat": 40.9781,
+"lon": -124.109,
+"name": "California Redwood Coast-Humboldt County Airport",
+"city": "Arcata/Eureka",
+"flights_in_sample": 218,
+"weather": false
+},
+"CWA": {
+"lat": 44.7774,
+"lon": -89.6702,
+"name": "Central Wisconsin Airport",
+"city": "Mosinee",
+"flights_in_sample": 215,
+"weather": false
+},
+"BRO": {
+"lat": 25.9072,
+"lon": -97.4252,
+"name": "Brownsville South Padre Island International Airport",
+"city": "Brownsville",
+"flights_in_sample": 214,
+"weather": false
+},
+"YUM": {
+"lat": 32.6509,
+"lon": -114.6094,
+"name": "Yuma International Airport / Marine Corps Air Station Yuma",
+"city": "Yuma",
+"flights_in_sample": 214,
+"weather": false
+},
+"ISN": {
+"lat": 48.1779,
+"lon": -103.6424,
+"name": "Sloulin Field International Airport (closed 2019)",
+"city": "Williston",
+"flights_in_sample": 213,
+"weather": false
+},
+"DRO": {
+"lat": 37.1515,
+"lon": -107.754,
+"name": "Durango La Plata County Airport",
+"city": "Durango",
+"flights_in_sample": 211,
+"weather": false
+},
+"LCH": {
+"lat": 30.1261,
+"lon": -93.2233,
+"name": "Lake Charles Regional Airport",
+"city": "Lake Charles",
+"flights_in_sample": 209,
+"weather": false
+},
+"STX": {
+"lat": 17.7014,
+"lon": -64.8026,
+"name": "Henry E. Rohlsen Airport",
+"city": "Christiansted",
+"flights_in_sample": 201,
+"weather": false
+},
+"ITH": {
+"lat": 42.491,
+"lon": -76.4584,
+"name": "Ithaca Tompkins Regional Airport",
+"city": "Ithaca",
+"flights_in_sample": 196,
+"weather": false
+},
+"SUN": {
+"lat": 43.5044,
+"lon": -114.296,
+"name": "Friedman Memorial Airport",
+"city": "Hailey",
+"flights_in_sample": 194,
+"weather": false
+},
+"RDD": {
+"lat": 40.509,
+"lon": -122.293,
+"name": "Redding Municipal Airport",
+"city": "Redding",
+"flights_in_sample": 191,
+"weather": false
+},
+"TWF": {
+"lat": 42.4818,
+"lon": -114.488,
+"name": "Joslin Field Magic Valley Regional Airport",
+"city": "Twin Falls",
+"flights_in_sample": 185,
+"weather": false
+},
+"GCC": {
+"lat": 44.3489,
+"lon": -105.539,
+"name": "Northeast Wyoming Regional Airport",
+"city": "Gillette",
+"flights_in_sample": 185,
+"weather": false
+},
+"FSM": {
+"lat": 35.3366,
+"lon": -94.3674,
+"name": "Fort Smith Regional Airport",
+"city": "Fort Smith",
+"flights_in_sample": 182,
+"weather": false
+},
+"MEI": {
+"lat": 32.3326,
+"lon": -88.7519,
+"name": "Key Field / Meridian Regional Airport",
+"city": "Meridian",
+"flights_in_sample": 181,
+"weather": false
+},
+"BET": {
+"lat": 60.7798,
+"lon": -161.838,
+"name": "Bethel Airport",
+"city": "Bethel",
+"flights_in_sample": 177,
+"weather": false
+},
+"PHF": {
+"lat": 37.1319,
+"lon": -76.493,
+"name": "Newport News Williamsburg International Airport",
+"city": "Newport News",
+"flights_in_sample": 177,
+"weather": false
+},
+"HDN": {
+"lat": 40.4812,
+"lon": -107.218,
+"name": "Yampa Valley Airport",
+"city": "Hayden",
+"flights_in_sample": 175,
+"weather": false
+},
+"LBE": {
+"lat": 40.2759,
+"lon": -79.4048,
+"name": "Arnold Palmer Regional Airport",
+"city": "Latrobe",
+"flights_in_sample": 175,
+"weather": false
+},
+"JMS": {
+"lat": 46.9297,
+"lon": -98.6782,
+"name": "Jamestown Regional Airport",
+"city": "Jamestown",
+"flights_in_sample": 171,
+"weather": false
+},
+"MHK": {
+"lat": 39.141,
+"lon": -96.6708,
+"name": "Manhattan Regional Airport",
+"city": "Manhattan",
+"flights_in_sample": 171,
+"weather": false
+},
+"GTR": {
+"lat": 33.4503,
+"lon": -88.5914,
+"name": "Golden Triangle Regional Airport",
+"city": "Columbus/W Point/Starkville",
+"flights_in_sample": 170,
+"weather": false
+},
+"COD": {
+"lat": 44.5202,
+"lon": -109.024,
+"name": "Yellowstone Regional Airport",
+"city": "Cody",
+"flights_in_sample": 164,
+"weather": false
+},
+"STS": {
+"lat": 38.509,
+"lon": -122.813,
+"name": "Charles M. Schulz Sonoma County Airport",
+"city": "Santa Rosa",
+"flights_in_sample": 163,
+"weather": false
+},
+"OAJ": {
+"lat": 34.8292,
+"lon": -77.6121,
+"name": "Albert J Ellis Airport",
+"city": "Richlands",
+"flights_in_sample": 162,
+"weather": false
+},
+"PIH": {
+"lat": 42.9098,
+"lon": -112.596,
+"name": "Pocatello Regional Airport",
+"city": "Pocatello",
+"flights_in_sample": 162,
+"weather": false
+},
+"BRW": {
+"lat": 71.2854,
+"lon": -156.766,
+"name": "Wiley Post Will Rogers Memorial Airport",
+"city": "Utqia\u0121vik",
+"flights_in_sample": 159,
+"weather": false
+},
+"PLN": {
+"lat": 45.5709,
+"lon": -84.7967,
+"name": "Pellston Regional Airport of Emmet County Airport",
+"city": "Pellston",
+"flights_in_sample": 156,
+"weather": false
+},
+"CPR": {
+"lat": 42.9074,
+"lon": -106.4616,
+"name": "Casper-Natrona County International Airport",
+"city": "Casper",
+"flights_in_sample": 149,
+"weather": false
+},
+"RHI": {
+"lat": 45.6312,
+"lon": -89.4675,
+"name": "Rhinelander Oneida County Airport",
+"city": "Rhinelander",
+"flights_in_sample": 139,
+"weather": false
+},
+"MQT": {
+"lat": 46.3515,
+"lon": -87.3959,
+"name": "Marquette Sawyer Regional Airport",
+"city": "Gwinn",
+"flights_in_sample": 138,
+"weather": false
+},
+"CDV": {
+"lat": 60.4918,
+"lon": -145.478,
+"name": "Merle K (Mudhole) Smith Airport",
+"city": "Cordova",
+"flights_in_sample": 137,
+"weather": false
+},
+"BGM": {
+"lat": 42.2087,
+"lon": -75.9798,
+"name": "Greater Binghamton/Edwin A Link field",
+"city": "Binghamton",
+"flights_in_sample": 136,
+"weather": false
+},
+"BLI": {
+"lat": 48.7928,
+"lon": -122.538,
+"name": "Bellingham International Airport",
+"city": "Bellingham",
+"flights_in_sample": 136,
+"weather": false
+},
+"OME": {
+"lat": 64.5122,
+"lon": -165.445,
+"name": "Nome Airport",
+"city": "Nome",
+"flights_in_sample": 131,
+"weather": false
+},
+"EAU": {
+"lat": 44.8658,
+"lon": -91.4843,
+"name": "Chippewa Valley Regional Airport",
+"city": "Eau Claire",
+"flights_in_sample": 131,
+"weather": false
+},
+"MTJ": {
+"lat": 38.5098,
+"lon": -107.894,
+"name": "Montrose Regional Airport",
+"city": "Montrose",
+"flights_in_sample": 129,
+"weather": false
+},
+"VLD": {
+"lat": 30.7825,
+"lon": -83.2767,
+"name": "Valdosta Regional Airport",
+"city": "Valdosta",
+"flights_in_sample": 129,
+"weather": false
+},
+"OTZ": {
+"lat": 66.8847,
+"lon": -162.599,
+"name": "Ralph Wien Memorial Airport",
+"city": "Kotzebue",
+"flights_in_sample": 128,
+"weather": false
+},
+"PSE": {
+"lat": 18.0083,
+"lon": -66.563,
+"name": "Mercedita International Airport",
+"city": "Ponce",
+"flights_in_sample": 128,
+"weather": false
+},
+"ABR": {
+"lat": 45.4491,
+"lon": -98.4218,
+"name": "Aberdeen Regional Airport",
+"city": "Aberdeen",
+"flights_in_sample": 128,
+"weather": false
+},
+"BGR": {
+"lat": 44.8064,
+"lon": -68.8267,
+"name": "Bangor International Airport",
+"city": "Bangor",
+"flights_in_sample": 128,
+"weather": false
+},
+"CSG": {
+"lat": 32.5164,
+"lon": -84.9396,
+"name": "Columbus Airport",
+"city": "Columbus",
+"flights_in_sample": 127,
+"weather": false
+},
+"CDC": {
+"lat": 37.701,
+"lon": -113.099,
+"name": "Cedar City Regional Airport",
+"city": "Cedar City",
+"flights_in_sample": 126,
+"weather": false
+},
+"LWS": {
+"lat": 46.3745,
+"lon": -117.015,
+"name": "Lewiston Nez Perce County Airport",
+"city": "Lewiston",
+"flights_in_sample": 124,
+"weather": false
+},
+"CMX": {
+"lat": 47.1684,
+"lon": -88.4891,
+"name": "Houghton County Memorial Airport",
+"city": "Hancock",
+"flights_in_sample": 120,
+"weather": false
+},
+"BJI": {
+"lat": 47.5094,
+"lon": -94.9337,
+"name": "Bemidji Regional Airport",
+"city": "Bemidji",
+"flights_in_sample": 119,
+"weather": false
+},
+"LAW": {
+"lat": 34.5677,
+"lon": -98.4166,
+"name": "Lawton Fort Sill Regional Airport",
+"city": "Lawton",
+"flights_in_sample": 119,
+"weather": false
+},
+"PSG": {
+"lat": 56.8017,
+"lon": -132.945,
+"name": "Petersburg James A Johnson Airport",
+"city": "Petersburg",
+"flights_in_sample": 119,
+"weather": false
+},
+"PAH": {
+"lat": 37.0608,
+"lon": -88.7738,
+"name": "Barkley Regional Airport",
+"city": "Paducah",
+"flights_in_sample": 118,
+"weather": false
+},
+"INL": {
+"lat": 48.5662,
+"lon": -93.4031,
+"name": "Falls International Airport",
+"city": "International Falls",
+"flights_in_sample": 117,
+"weather": false
+},
+"IMT": {
+"lat": 45.8191,
+"lon": -88.1146,
+"name": "Ford Airport",
+"city": "Kingsford",
+"flights_in_sample": 116,
+"weather": false
+},
+"BQK": {
+"lat": 31.2588,
+"lon": -81.4665,
+"name": "Brunswick Golden Isles Airport",
+"city": "Brunswick",
+"flights_in_sample": 115,
+"weather": false
+},
+"ADQ": {
+"lat": 57.75,
+"lon": -152.494,
+"name": "Kodiak Airport",
+"city": "Kodiak",
+"flights_in_sample": 115,
+"weather": false
+},
+"WRG": {
+"lat": 56.4843,
+"lon": -132.37,
+"name": "Wrangell Airport",
+"city": "Wrangell",
+"flights_in_sample": 115,
+"weather": false
+},
+"HIB": {
+"lat": 47.3848,
+"lon": -92.8369,
+"name": "Range Regional Airport",
+"city": "Hibbing",
+"flights_in_sample": 114,
+"weather": false
+},
+"LAR": {
+"lat": 41.3121,
+"lon": -105.675,
+"name": "Laramie Regional Airport",
+"city": "Laramie",
+"flights_in_sample": 114,
+"weather": false
+},
+"RKS": {
+"lat": 41.5942,
+"lon": -109.065,
+"name": "Southwest Wyoming Regional Airport",
+"city": "Rock Springs",
+"flights_in_sample": 114,
+"weather": false
+},
+"SCC": {
+"lat": 70.1947,
+"lon": -148.465,
+"name": "Deadhorse Airport",
+"city": "Deadhorse",
+"flights_in_sample": 113,
+"weather": false
+},
+"EKO": {
+"lat": 40.8249,
+"lon": -115.792,
+"name": "Elko Regional Airport",
+"city": "Elko",
+"flights_in_sample": 113,
+"weather": false
+},
+"COU": {
+"lat": 38.8181,
+"lon": -92.2196,
+"name": "Columbia Regional Airport",
+"city": "Columbia",
+"flights_in_sample": 112,
+"weather": false
+},
+"ABY": {
+"lat": 31.5329,
+"lon": -84.1962,
+"name": "Southwest Georgia Regional Airport",
+"city": "Albany",
+"flights_in_sample": 111,
+"weather": false
+},
+"YAK": {
+"lat": 59.5087,
+"lon": -139.6604,
+"name": "Yakutat Airport",
+"city": "Yakutat",
+"flights_in_sample": 111,
+"weather": false
+},
+"BTM": {
+"lat": 45.9548,
+"lon": -112.497,
+"name": "Bert Mooney Airport",
+"city": "Butte",
+"flights_in_sample": 110,
+"weather": false
+},
+"PIB": {
+"lat": 31.4671,
+"lon": -89.3371,
+"name": "Hattiesburg Laurel Regional Airport",
+"city": "Moselle",
+"flights_in_sample": 109,
+"weather": false
+},
+"DVL": {
+"lat": 48.1155,
+"lon": -98.9088,
+"name": "Devils Lake Regional Airport",
+"city": "Devils Lake",
+"flights_in_sample": 108,
+"weather": false
+},
+"HOB": {
+"lat": 32.6875,
+"lon": -103.217,
+"name": "Lea County Regional Airport",
+"city": "Hobbs",
+"flights_in_sample": 108,
+"weather": false
+},
+"ESC": {
+"lat": 45.7232,
+"lon": -87.0886,
+"name": "Delta County Airport",
+"city": "Escanaba",
+"flights_in_sample": 108,
+"weather": false
+},
+"APN": {
+"lat": 45.0781,
+"lon": -83.5603,
+"name": "Alpena County Regional Airport",
+"city": "Alpena",
+"flights_in_sample": 108,
+"weather": false
+},
+"ACK": {
+"lat": 41.2531,
+"lon": -70.0602,
+"name": "Nantucket Memorial Airport",
+"city": "Nantucket",
+"flights_in_sample": 107,
+"weather": false
+},
+"CIU": {
+"lat": 46.242,
+"lon": -84.4621,
+"name": "Chippewa County International Airport",
+"city": "Kincheloe",
+"flights_in_sample": 106,
+"weather": false
+},
+"BRD": {
+"lat": 46.4029,
+"lon": -94.1297,
+"name": "Brainerd Lakes Regional Airport",
+"city": "Brainerd",
+"flights_in_sample": 105,
+"weather": false
+},
+"ORH": {
+"lat": 42.2673,
+"lon": -71.8757,
+"name": "Worcester Regional Airport",
+"city": "Worcester",
+"flights_in_sample": 103,
+"weather": false
+},
+"HYS": {
+"lat": 38.8445,
+"lon": -99.2731,
+"name": "Hays Regional Airport",
+"city": "Hays",
+"flights_in_sample": 94,
+"weather": false
+},
+"SJT": {
+"lat": 31.3577,
+"lon": -100.496,
+"name": "San Angelo Regional Mathis Field",
+"city": "San Angelo",
+"flights_in_sample": 92,
+"weather": false
+},
+"MKG": {
+"lat": 43.1695,
+"lon": -86.2382,
+"name": "Muskegon County Airport",
+"city": "Muskegon",
+"flights_in_sample": 92,
+"weather": false
+},
+"ALO": {
+"lat": 42.5571,
+"lon": -92.4003,
+"name": "Waterloo Regional Airport",
+"city": "Waterloo",
+"flights_in_sample": 89,
+"weather": false
+},
+"IAG": {
+"lat": 43.1073,
+"lon": -78.9462,
+"name": "Niagara Falls International Airport",
+"city": "Niagara Falls",
+"flights_in_sample": 85,
+"weather": false
+},
+"ROW": {
+"lat": 33.3016,
+"lon": -104.531,
+"name": "Roswell Air Center Airport",
+"city": "Roswell",
+"flights_in_sample": 81,
+"weather": false
+},
+"PBG": {
+"lat": 44.6509,
+"lon": -73.4681,
+"name": "Plattsburgh International Airport",
+"city": "Plattsburgh",
+"flights_in_sample": 79,
+"weather": false
+},
+"EWN": {
+"lat": 35.073,
+"lon": -77.0429,
+"name": "Coastal Carolina Regional Airport",
+"city": "New Bern",
+"flights_in_sample": 75,
+"weather": false
+},
+"GUM": {
+"lat": 13.485,
+"lon": 144.7973,
+"name": "Antonio B. Won Pat International Airport",
+"city": "Hag\u00e5t\u00f1a",
+"flights_in_sample": 69,
+"weather": false
+},
+"ELM": {
+"lat": 42.1599,
+"lon": -76.8916,
+"name": "Elmira Corning Regional Airport",
+"city": "Elmira/Corning",
+"flights_in_sample": 60,
+"weather": false
+},
+"OTH": {
+"lat": 43.4171,
+"lon": -124.246,
+"name": "Southwest Oregon Regional Airport",
+"city": "North Bend",
+"flights_in_sample": 55,
+"weather": false
+},
+"ACT": {
+"lat": 31.6113,
+"lon": -97.2305,
+"name": "Waco Regional Airport",
+"city": "Waco",
+"flights_in_sample": 53,
+"weather": false
+},
+"GRI": {
+"lat": 40.9675,
+"lon": -98.3096,
+"name": "Central Nebraska Regional Airport",
+"city": "Grand Island",
+"flights_in_sample": 53,
+"weather": false
+},
+"IFP": {
+"lat": 35.1547,
+"lon": -114.5593,
+"name": "Laughlin Bullhead International Airport",
+"city": "Bullhead City",
+"flights_in_sample": 52,
+"weather": false
+},
+"SPS": {
+"lat": 33.9888,
+"lon": -98.4919,
+"name": "Wichita Falls Municipal Airport / Sheppard Air Force Base",
+"city": "Wichita Falls",
+"flights_in_sample": 45,
+"weather": false
+},
+"WYS": {
+"lat": 44.6884,
+"lon": -111.118,
+"name": "Yellowstone Airport",
+"city": "West Yellowstone",
+"flights_in_sample": 42,
+"weather": false
+},
+"TOL": {
+"lat": 41.5868,
+"lon": -83.8078,
+"name": "Eugene F. Kranz Toledo Express Airport",
+"city": "Toledo",
+"flights_in_sample": 40,
+"weather": false
+},
+"MVY": {
+"lat": 41.3931,
+"lon": -70.6143,
+"name": "Martha's Vineyard Airport",
+"city": "Martha's Vineyard",
+"flights_in_sample": 34,
+"weather": false
+},
+"GCK": {
+"lat": 37.9275,
+"lon": -100.724,
+"name": "Garden City Regional Airport",
+"city": "Garden City",
+"flights_in_sample": 32,
+"weather": false
+},
+"PGD": {
+"lat": 26.9202,
+"lon": -81.9905,
+"name": "Punta Gorda Airport",
+"city": "Punta Gorda",
+"flights_in_sample": 32,
+"weather": false
+},
+"GUC": {
+"lat": 38.5347,
+"lon": -106.9346,
+"name": "Gunnison Crested Butte Regional Airport",
+"city": "Gunnison",
+"flights_in_sample": 30,
+"weather": false
+},
+"JLN": {
+"lat": 37.1518,
+"lon": -94.4983,
+"name": "Joplin Regional Airport",
+"city": "Joplin",
+"flights_in_sample": 27,
+"weather": false
+},
+"CKB": {
+"lat": 39.2966,
+"lon": -80.2281,
+"name": "North Central West Virginia Airport",
+"city": "Bridgeport",
+"flights_in_sample": 24,
+"weather": false
+},
+"PPG": {
+"lat": -14.331,
+"lon": -170.71,
+"name": "Pago Pago International Airport",
+"city": "Pago Pago",
+"flights_in_sample": 21,
+"weather": false
+},
+"HYA": {
+"lat": 41.6693,
+"lon": -70.2804,
+"name": "Cape Cod Gateway Airport",
+"city": "Hyannis",
+"flights_in_sample": 21,
+"weather": false
+},
+"TYR": {
+"lat": 32.3541,
+"lon": -95.4024,
+"name": "Tyler Pounds Regional Airport",
+"city": "Tyler",
+"flights_in_sample": 19,
+"weather": false
+},
+"GST": {
+"lat": 58.4253,
+"lon": -135.707,
+"name": "Gustavus Airport",
+"city": "Gustavus",
+"flights_in_sample": 19,
+"weather": false
+},
+"ADK": {
+"lat": 51.8836,
+"lon": -176.6428,
+"name": "Adak Airport",
+"city": "Adak",
+"flights_in_sample": 17,
+"weather": false
+},
+"MMH": {
+"lat": 37.6254,
+"lon": -118.8431,
+"name": "Mammoth Yosemite Airport",
+"city": "Mammoth Lakes",
+"flights_in_sample": 16,
+"weather": false
+},
+"DLG": {
+"lat": 59.0447,
+"lon": -158.505,
+"name": "Dillingham Airport",
+"city": "Dillingham",
+"flights_in_sample": 15,
+"weather": false
+},
+"TXK": {
+"lat": 33.4537,
+"lon": -93.991,
+"name": "Texarkana Regional Airport (Webb Field)",
+"city": "Texarkana",
+"flights_in_sample": 14,
+"weather": false
+},
+"PUB": {
+"lat": 38.2891,
+"lon": -104.497,
+"name": "Pueblo Memorial Airport",
+"city": "Pueblo",
+"flights_in_sample": 10,
+"weather": false
+},
+"AKN": {
+"lat": 58.6778,
+"lon": -156.652,
+"name": "King Salmon Airport",
+"city": "King Salmon",
+"flights_in_sample": 9,
+"weather": false
+},
+"UIN": {
+"lat": 39.9427,
+"lon": -91.1946,
+"name": "Quincy Regional Airport Baldwin Field",
+"city": "Quincy",
+"flights_in_sample": 9,
+"weather": false
+},
+"CGI": {
+"lat": 37.2253,
+"lon": -89.5708,
+"name": "Cape Girardeau Regional Airport",
+"city": "Cape Girardeau",
+"flights_in_sample": 9,
+"weather": false
+},
+"ABI": {
+"lat": 32.4113,
+"lon": -99.6819,
+"name": "Abilene Regional Airport",
+"city": "Abilene",
+"flights_in_sample": 8,
+"weather": false
+},
+"UST": {
+"lat": 29.9592,
+"lon": -81.3398,
+"name": "Northeast Florida Regional Airport",
+"city": "St Augustine",
+"flights_in_sample": 7,
+"weather": false
+},
+"SUX": {
+"lat": 42.3976,
+"lon": -96.3822,
+"name": "Sioux Gateway Airport / Brigadier General Bud Day Field",
+"city": "Sioux City",
+"flights_in_sample": 7,
+"weather": false
+},
+"GGG": {
+"lat": 32.384,
+"lon": -94.7115,
+"name": "East Texas Regional Airport",
+"city": "Longview",
+"flights_in_sample": 2,
+"weather": false
+}
+}

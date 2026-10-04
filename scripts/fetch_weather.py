@@ -10,6 +10,7 @@ Run on a machine with normal internet access (free, no API key):
   On HTTP 429 the script waits and retries automatically.
 * Output: data/weather_2017.csv.gz  (airport, local time, 10 hourly variables)
 """
+import http.client
 import json
 import sys
 import time
@@ -41,16 +42,17 @@ def fetch(lat, lon):
                 raise RuntimeError(data.get("reason"))
             return data
         except urllib.error.HTTPError as e:
-            if e.code == 429:
+            if e.code == 429 or e.code >= 500:
                 wait = 60 if attempt < 3 else 300
-                print(f"   rate limited, waiting {wait}s (attempt {attempt + 1})", flush=True)
+                print(f"   HTTP {e.code}, waiting {wait}s (attempt {attempt + 1})", flush=True)
                 time.sleep(wait)
                 continue
             raise
-        except (urllib.error.URLError, TimeoutError) as e:
-            print(f"   network error {e}, retrying in 20s", flush=True)
+        except (OSError, json.JSONDecodeError, http.client.HTTPException) as e:
+            # dropped connection, timeout, or an empty/truncated response body
+            print(f"   network error ({type(e).__name__}), retrying in 20s (attempt {attempt + 1})", flush=True)
             time.sleep(20)
-    raise RuntimeError("gave up after repeated rate limiting")
+    raise RuntimeError("gave up after 40 attempts (rate limiting or network errors)")
 
 
 def main():
@@ -69,7 +71,7 @@ def main():
     frames = []
     for code, _ in todo:
         h = json.loads((CACHE / f"{code}.json").read_text())["hourly"]
-        f = pd.DataFrame(h).rename(columns={"time": "time"})
+        f = pd.DataFrame(h)
         f.insert(0, "airport", code)
         frames.append(f)
     df = pd.concat(frames, ignore_index=True)

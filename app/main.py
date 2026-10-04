@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "app"))
 from features import build_features  # noqa: E402
 from weather import WMO_TEXT, add_weather, flight_times, prepare_weather  # noqa: E402
+import flight_lookup  # noqa: E402
 import weather_live  # noqa: E402
 
 SCHED = joblib.load(ROOT / "models" / "model.joblib")
@@ -134,7 +135,30 @@ def _predict(bundle: dict, X: pd.DataFrame):
 def options():
     """Valid routes and the airlines that fly each one (the form only offers these)."""
     return {"routes": {k: sorted(v) for k, v in ROUTE_CARRIERS.items() if k in ROUTES},
-            "forecast_days": weather_live.FORECAST_DAYS, "weather_model": WX is not None}
+            "forecast_days": weather_live.FORECAST_DAYS, "weather_model": WX is not None,
+            "flight_lookup": flight_lookup.api_key() is not None}
+
+
+@app.get("/api/flight-lookup")
+def flight_lookup_endpoint(number: str, date: Date):
+    """Flight number + departure date -> legs with route and scheduled local times."""
+    try:
+        legs = flight_lookup.lookup(number, date.isoformat())
+    except flight_lookup.LookupError_ as e:
+        raise HTTPException(e.status, str(e))
+    if not legs:
+        raise HTTPException(404, f"No flight {flight_lookup.normalise(number)} found departing on {date.isoformat()}. "
+                                 "Check the number and date (use the departure date in local time).")
+    for leg in legs:
+        route = f"{leg['origin']}-{leg['dest']}"
+        if route not in ROUTES:
+            leg["supported"], leg["reason"] = False, f"{route} isn't in the US domestic training data, so the model can't predict it."
+        elif leg["carrier"] not in ROUTE_CARRIERS.get(route, []):
+            leg["supported"], leg["reason"] = False, (f"{leg['carrier']} didn't fly {route} in the 2017 training data, "
+                                                      "so the model can't predict this airline on this route.")
+        else:
+            leg["supported"], leg["reason"] = True, None
+    return {"legs": legs}
 
 
 @app.post("/api/predict")

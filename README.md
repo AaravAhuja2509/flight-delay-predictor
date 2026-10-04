@@ -76,6 +76,12 @@ curl -X POST localhost:8000/api/predict -H "Content-Type: application/json" -d \
  '{"carrier":"DL","origin":"JFK","dest":"LAX","date":"2026-12-23","dep_time":"17:30","arr_time":"20:45"}'
 ```
 
+## Flight number lookup (optional)
+
+Type a flight number and date (e.g. `DL 423`) and the app fills in the route, airline and scheduled local times from the [AeroDataBox](https://rapidapi.com/aedbx-aedbx/api/aerodatabox) API, then runs the prediction. Multi-leg flights let you pick the leg; codeshare listings resolve to the operating airline; non-US or untrained routes are flagged instead of guessed.
+
+Setup: get a free RapidAPI key (Basic plan, about 400 units a month), copy `.env.example` to `.env` and set `AERODATABOX_KEY`. Lookups are cached for 6 hours. Without a key the flight-number box is hidden and manual entry still works.
+
 ## Deploy
 
 Any Docker host works. On Render or Railway: create a new web service from this repo and pick the Dockerfile. The app reads `$PORT` automatically.
@@ -97,6 +103,7 @@ scripts/            dataset builder
 - The weather model is trained on *actual* (reanalysis) weather, but a live app can only use *forecasts*, which are less accurate, so live accuracy will be somewhat below the test score. Forecasts only reach 16 days ahead; beyond that the app falls back to the schedule-only model.
 - The app uses the weather model only for flights in the next 16 days with both airports' forecasts available; otherwise it falls back to the schedule-only model and says so on the page.
 - No live traffic and no aircraft rotation (the previous flight's delay).
+- The model only knows airlines and routes from 2017: airlines that started or merged since then (for example Breeze, or Virgin America into Alaska) can be looked up but not predicted.
 - Distance and scheduled flight time come from the route's historical median, not the user's input.
 - Probabilities are modest by nature (most flights land between 6% and 45%). Treat the output as a risk estimate, not a certainty.
 

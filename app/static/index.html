@@ -45,6 +45,17 @@
   li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
   .up { color: var(--high); } .down { color: var(--low); }
   .note { font-size: .8rem; color: var(--muted); margin-top: 14px; }
+  #lf { display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 12px; align-items: end; }
+  #lf button { grid-column: auto; padding: 10px 16px; white-space: nowrap; }
+  #lmsg { margin-top: 8px; }
+  #lmsg.err { color: var(--high); }
+  .legs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .legs button { grid-column: auto; background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+                 font-weight: 500; padding: 8px 12px; }
+  .legs button.on { border-color: var(--accent); color: var(--accent); }
+  .or { text-align: center; color: var(--muted); font-size: .85rem; margin: 14px 0; }
+  .lookup.off { display: none; }
+  @media (max-width: 520px) { #lf { grid-template-columns: 1fr; } }
   .badge { display: inline-block; margin-top: 14px; font-size: .75rem; font-weight: 600; letter-spacing: .03em;
            padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
   .badge.live { color: var(--accent); border-color: var(--accent); }
@@ -61,6 +72,19 @@
 <main>
   <h1>Flight Delay Predictor</h1>
   <p class="sub">Enter a scheduled US domestic flight to estimate the chance it lands 15+ minutes late.</p>
+
+  <div class="card lookup">
+    <form id="lf" autocomplete="off">
+      <div><label for="fnum">Flight number</label>
+        <input id="fnum" placeholder="e.g. DL 423" maxlength="8" required></div>
+      <div><label for="fdate">Departure date</label><input id="fdate" type="date" required></div>
+      <button id="lgo" type="submit">Look up &amp; predict</button>
+    </form>
+    <div class="hint" id="lmsg"></div>
+    <div class="legs" id="legs"></div>
+  </div>
+
+  <p class="or" id="or">or enter the details yourself</p>
 
   <div class="card">
     <form id="f" autocomplete="off">
@@ -101,6 +125,54 @@ fetch("/api/options").then(r => r.json()).then(d => {
   Object.keys(routes).forEach(k => { const [o, t] = k.split("-"); (origins[o] ||= []).push(t); });
   $("origins").innerHTML = Object.keys(origins).sort().map(o => `<option value="${o}">`).join("");
   $("go").disabled = false;
+  if (!d.flight_lookup) {  // no API key configured: hide the flight-number box
+    document.querySelector(".lookup").classList.add("off");
+    $("or").style.display = "none";
+  }
+});
+
+// ---- flight number lookup -------------------------------------------------
+function useLeg(leg, btn) {
+  document.querySelectorAll(".legs button").forEach(b => b.classList.toggle("on", b === btn));
+  $("origin").value = leg.origin; $("dest").value = leg.dest; refresh();
+  if ([...$("carrier").options].some(o => o.value === leg.carrier)) $("carrier").value = leg.carrier;
+  $("date").value = leg.date; $("dep").value = leg.dep_time; $("arr").value = leg.arr_time;
+  const label = `${leg.number} ${leg.airline_name ? "(" + leg.airline_name + ") " : ""}${leg.origin} → ${leg.dest}, ` +
+                `departs ${leg.dep_time}, arrives ${leg.arr_time} local`;
+  if (leg.supported) {
+    $("lmsg").className = "hint"; $("lmsg").textContent = label;
+    $("f").requestSubmit();
+  } else {
+    $("lmsg").className = "hint err"; $("lmsg").textContent = `${label}. ${leg.reason}`;
+    $("result").style.display = "none";
+  }
+}
+
+$("lf").addEventListener("submit", async e => {
+  e.preventDefault();
+  $("legs").innerHTML = ""; $("lmsg").className = "hint"; $("lmsg").textContent = "Looking up…";
+  $("lgo").disabled = true;
+  try {
+    const q = new URLSearchParams({ number: $("fnum").value, date: $("fdate").value });
+    const res = await fetch("/api/flight-lookup?" + q);
+    const d = await res.json();
+    if (!res.ok) throw new Error(typeof d.detail === "string" ? d.detail : "Check the flight number and date.");
+    if (d.legs.length > 1) {
+      $("lmsg").textContent = "This flight number has several legs. Pick one:";
+      d.legs.forEach(leg => {
+        const b = document.createElement("button");
+        b.type = "button"; b.textContent = `${leg.origin} → ${leg.dest} · ${leg.dep_time}`;
+        b.onclick = () => useLeg(leg, b);
+        $("legs").appendChild(b);
+      });
+      const first = d.legs.find(l => l.supported);
+      if (first) useLeg(first, $("legs").children[d.legs.indexOf(first)]);
+    } else {
+      useLeg(d.legs[0], null);
+    }
+  } catch (err) {
+    $("lmsg").className = "hint err"; $("lmsg").textContent = err.message;
+  } finally { $("lgo").disabled = false; }
 });
 
 function refresh() {
@@ -119,6 +191,7 @@ function refresh() {
 $("origin").addEventListener("input", refresh);
 $("dest").addEventListener("input", refresh);
 $("date").value = new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10);
+$("fdate").value = new Date(Date.now() + 864e5).toISOString().slice(0, 10);
 
 $("f").addEventListener("submit", async e => {
   e.preventDefault();

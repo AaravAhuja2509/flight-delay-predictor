@@ -59,6 +59,7 @@ pip install -r requirements.txt -r requirements-train.txt
 python scripts/make_dataset.py      # downloads BTS 2017 data, writes data/flight_delay_data.csv
 python src/train.py                 # trains all models, writes models/ and reports/
 uvicorn app.main:app --reload       # http://localhost:8000
+python -m pytest -q                 # tests (simulated forecasts, no network needed)
 ```
 
 Docker:
@@ -94,7 +95,7 @@ scripts/            dataset builder
 
 - US domestic flights from 2017 only. Routes and airlines outside the data are rejected.
 - The weather model is trained on *actual* (reanalysis) weather, but a live app can only use *forecasts*, which are less accurate, so live accuracy will be somewhat below the test score. Forecasts only reach 16 days ahead; beyond that the app falls back to the schedule-only model.
-- The web app does not use the weather model yet (live forecasts are the next step).
+- The app uses the weather model only for flights in the next 16 days with both airports' forecasts available; otherwise it falls back to the schedule-only model and says so on the page.
 - No live traffic and no aircraft rotation (the previous flight's delay).
 - Distance and scheduled flight time come from the route's historical median, not the user's input.
 - Probabilities are modest by nature (most flights land between 6% and 45%). Treat the output as a risk estimate, not a certainty.
@@ -102,7 +103,7 @@ scripts/            dataset builder
 ## Roadmap
 
 1. ~~Round 2: hourly weather at origin and destination~~ (done: AUC 0.621 to 0.684).
-2. Live forecasts in the app (Open-Meteo forecast API), with schedule-only fallback beyond 16 days.
+2. ~~Live forecasts in the app~~ (done: Open-Meteo forecasts for both airports, 30-minute cache, schedule-only fallback).
 3. Prediction logging plus a feedback loop: real outcomes from monthly BTS releases, a "was it delayed?" button, and monthly retraining that only ships a new model if it beats the current one.
 4. Recent BTS data (2023-2025) instead of 2017.
 5. Congestion features and previous-flight delay via tail number.

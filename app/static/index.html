@@ -45,6 +45,15 @@
   li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
   .up { color: var(--high); } .down { color: var(--low); }
   .note { font-size: .8rem; color: var(--muted); margin-top: 14px; }
+  .badge { display: inline-block; margin-top: 14px; font-size: .75rem; font-weight: 600; letter-spacing: .03em;
+           padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+  .badge.live { color: var(--accent); border-color: var(--accent); }
+  .wx { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .wx:empty { display: none; }
+  .wxc { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .85rem; }
+  .wxc b { display: block; font-size: .95rem; }
+  .wxc span { color: var(--muted); }
+  @media (max-width: 520px) { .wx { grid-template-columns: 1fr; } }
   @media (max-width: 520px) { form { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -76,6 +85,8 @@
     <div class="verdict"><h2 id="vtext"></h2><div class="pct" id="pct"></div></div>
     <div class="bar"><div class="avg" id="avg"></div><div class="tick" id="tick"></div></div>
     <div class="scale"><span>0%</span><span id="avglabel"></span><span>60%+</span></div>
+    <div class="badge" id="mode"></div>
+    <div class="wx" id="wx"></div>
     <ul id="factors"></ul>
     <p class="note" id="note"></p>
   </div>
@@ -139,6 +150,13 @@ function show(d) {
   $("avglabel").textContent = `average flight ${Math.round(d.average_flight_probability * 100)}%`;
   $("factors").innerHTML = d.factors.map(f =>
     `<li><span>${f.text}</span><span class="${f.weight > 0 ? "up" : "down"}">${f.weight > 0 ? "▲" : "▼"} ${f.effect}</span></li>`).join("");
+  const live = d.model === "weather";
+  $("mode").textContent = live ? "● Live weather forecast" : "Schedule-only model";
+  $("mode").className = "badge" + (live ? " live" : "");
+  const card = (label, w) => w ? `<div class="wxc"><span>${label} · ${w.airport} · ${w.time}</span>
+      <b>${w.conditions}, ${w.temp_c}°C</b>
+      <span>${w.precip_mm_3h} mm rain/snow in 3h · wind ${w.wind_kmh} km/h, gusts ${w.gust_kmh} km/h</span></div>` : "";
+  $("wx").innerHTML = live && d.weather ? card("Departure", d.weather.origin) + card("Arrival", d.weather.dest) : "";
   $("note").textContent = `${d.risk} risk. ${d.note}`;
   $("result").style.display = "block";
   $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });

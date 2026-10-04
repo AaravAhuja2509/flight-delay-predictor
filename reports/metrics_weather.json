@@ -1,0 +1,86 @@
+{
+  "results": [
+    {
+      "model": "Schedule only (52 trees)",
+      "roc_auc": 0.6207,
+      "pr_auc": 0.2192,
+      "precision": 0.2424,
+      "recall": 0.2602,
+      "f1": 0.251,
+      "threshold": 0.222,
+      "train_seconds": 4.0
+    },
+    {
+      "model": "+ origin weather (102 trees)",
+      "roc_auc": 0.6586,
+      "pr_auc": 0.2654,
+      "precision": 0.2913,
+      "recall": 0.2844,
+      "f1": 0.2878,
+      "threshold": 0.222,
+      "train_seconds": 8.5
+    },
+    {
+      "model": "+ origin & destination weather (157 trees)",
+      "roc_auc": 0.6843,
+      "pr_auc": 0.3008,
+      "precision": 0.3082,
+      "recall": 0.3358,
+      "f1": 0.3214,
+      "threshold": 0.213,
+      "train_seconds": 14.3
+    }
+  ],
+  "by_weather": {
+    "bad_weather": {
+      "Schedule only": 0.5978,
+      "+ origin & destination weather": 0.7234
+    },
+    "normal_weather": {
+      "Schedule only": 0.6265,
+      "+ origin & destination weather": 0.67
+    },
+    "bad_weather_share_of_test": 0.061,
+    "delay_rate_bad_weather": 0.285,
+    "delay_rate_normal_weather": 0.139
+  },
+  "coverage": {
+    "origin": 0.9868,
+    "dest": 0.9866
+  },
+  "dropped_constant_features": [
+    "d_fog",
+    "d_freezing",
+    "d_storm",
+    "o_fog",
+    "o_freezing",
+    "o_storm"
+  ],
+  "feature_importance_gain": {
+    "Dest": 0.1811,
+    "Origin": 0.1547,
+    "DepMinuteOfDay": 0.0879,
+    "Month": 0.0709,
+    "Carrier": 0.0619,
+    "o_precip_3h": 0.0587,
+    "ArrHour": 0.0519,
+    "d_precip_3h": 0.0451,
+    "o_temp": 0.0328,
+    "DepHour": 0.0249,
+    "DaysToHoliday": 0.0242,
+    "DayOfWeek": 0.0223,
+    "d_dewspread": 0.0192,
+    "o_pressure": 0.0182,
+    "d_cloud_low": 0.0173,
+    "d_temp": 0.0172,
+    "o_snowfall_3h": 0.0141,
+    "d_gust": 0.0137,
+    "d_pressure": 0.0126,
+    "o_dewspread": 0.0114,
+    "o_gust": 0.0108,
+    "o_cloud_low": 0.0072,
+    "d_wind": 0.0059,
+    "Distance": 0.0053,
+    "d_snow_depth": 0.0051
+  }
+}

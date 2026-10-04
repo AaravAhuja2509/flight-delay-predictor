@@ -27,6 +27,25 @@ PR-AUC baseline is the test delay rate (14.8%). Precision and recall use a thres
 
 The deployed model is refit on all 12 months. The table above is from the Jan-Sep fit.
 
+## Round 2: adding weather
+
+Hourly weather for the 200 busiest airports (97% of flights) from the Open-Meteo archive, joined at the **origin at the scheduled departure hour** and the **destination at the scheduled arrival hour** (local time, red-eyes roll to the next day). Same split, same LightGBM settings.
+
+![weather results](reports/results_weather.png)
+
+| Model | ROC-AUC | PR-AUC | Precision | Recall |
+|---|---|---|---|---|
+| Schedule only | 0.621 | 0.219 | 0.242 | 0.260 |
+| + origin weather | 0.659 | 0.265 | 0.291 | 0.284 |
+| **+ origin & destination weather** | **0.684** | **0.301** | 0.308 | 0.336 |
+
+- Weather adds **+0.063 AUC** and **+37% PR-AUC**. Destination weather matters almost as much as origin weather.
+- The gain is biggest when it matters most: on departures in rain, snow or strong gusts (6% of test flights, 28.5% of them delayed), AUC rises from **0.598 to 0.723**.
+- Most useful weather signals: 3-hour precipitation at origin and destination, temperature, dew-point spread (fog/low-cloud risk), pressure, low cloud.
+- The archive is reanalysis data and never reports fog, thunderstorm or freezing-rain codes, so those flags were constant in training and are dropped automatically.
+
+Run it with `python scripts/fetch_weather.py` (about an hour, resumable) then `python src/train_weather.py`.
+
 ## Features (all known before departure)
 
 Airline, origin, destination, month, day of week, weekend flag, scheduled departure hour and minute-of-day, scheduled arrival hour, scheduled flight time, distance, distance in days to the nearest US federal holiday.
@@ -74,14 +93,18 @@ scripts/            dataset builder
 ## Limitations
 
 - US domestic flights from 2017 only. Routes and airlines outside the data are rejected.
-- No weather, no live traffic, no aircraft rotation (the previous flight's delay). These are the biggest missing signals.
+- The weather model is trained on *actual* (reanalysis) weather, but a live app can only use *forecasts*, which are less accurate, so live accuracy will be somewhat below the test score. Forecasts only reach 16 days ahead; beyond that the app falls back to the schedule-only model.
+- The web app does not use the weather model yet (live forecasts are the next step).
+- No live traffic and no aircraft rotation (the previous flight's delay).
 - Distance and scheduled flight time come from the route's historical median, not the user's input.
 - Probabilities are modest by nature (most flights land between 6% and 45%). Treat the output as a risk estimate, not a certainty.
 
 ## Roadmap
 
-1. Round 2: add hourly weather at origin and destination (Open-Meteo) and measure the AUC gain.
-2. Congestion features (scheduled departures per airport-hour).
-3. Previous-flight delay via tail number, for predictions made a few hours before departure.
+1. ~~Round 2: hourly weather at origin and destination~~ (done: AUC 0.621 to 0.684).
+2. Live forecasts in the app (Open-Meteo forecast API), with schedule-only fallback beyond 16 days.
+3. Prediction logging plus a feedback loop: real outcomes from monthly BTS releases, a "was it delayed?" button, and monthly retraining that only ships a new model if it beats the current one.
+4. Recent BTS data (2023-2025) instead of 2017.
+5. Congestion features and previous-flight delay via tail number.
 
 Data: US Bureau of Transportation Statistics, Reporting Carrier On-Time Performance.

@@ -46,6 +46,31 @@ Hourly weather for the 200 busiest airports (97% of flights) from the Open-Meteo
 
 Run it with `python scripts/fetch_weather.py` (about an hour, resumable) then `python src/train_weather.py`.
 
+## Round 3: the full dataset (5.6M flights)
+
+Does more data help? I trained the same weather model on 100k up to all ~4M Jan-Sep flights and scored every run on **all 1.4M Oct-Dec flights**.
+
+![learning curve](reports/learning_curve.png)
+
+| Training flights | 100k | 250k | 500k | **1M** | 2M | 4M |
+|---|---|---|---|---|---|---|
+| ROC-AUC | 0.683 | 0.685 | 0.688 | **0.691** | 0.689 | 0.688 |
+
+- **More rows barely help.** The gain flattens around 1M flights and slightly drops after, while the model keeps adding trees (4,000 at full size). The limit is **seasonal drift**, not data volume: the model learns Jan-Sep patterns that do not carry over to autumn and winter.
+- **The full schedule unlocks new features**, which a sample cannot provide (`src/feature_experiments.py`, 1M training rows, same test):
+
+| Features | ROC-AUC | PR-AUC | Usable in the app today? |
+|---|---|---|---|
+| Weather model | 0.691 | 0.315 | yes |
+| + typical airport congestion | 0.690 | 0.315 | yes, but no gain |
+| + same-day congestion | 0.689 | 0.315 | no gain |
+| **+ aircraft rotation** | **0.717** | **0.369** | needs the plane's schedule |
+
+- **Aircraft rotation** = which leg of the plane's day this is and the scheduled turnaround since its previous flight (tight turns let delays carry over). It is the strongest new signal: +0.026 AUC, +17% PR-AUC. Leakage check: the dataset drops cancelled flights, which cluster on bad days, so I recomputed rotation from the complete schedule including cancellations. The score moved only from 0.719 to 0.717, so the gain is real.
+- **Congestion adds nothing**: the model already learns airport and hour patterns from the airport and time features.
+
+**Shipped:** both app models are now trained from the full dataset (`src/train_full.py`: 1M rows for tuning, 1.15M rows from all 12 months for the final fit). Same accuracy, but the app now accepts **4,422 routes and 7,369 airline-route pairs** (up from 3,350 and 4,702).
+
 ## Features (all known before departure)
 
 Airline, origin, destination, month, day of week, weekend flag, scheduled departure hour and minute-of-day, scheduled arrival hour, scheduled flight time, distance, distance in days to the nearest US federal holiday.
@@ -56,8 +81,10 @@ Deliberately excluded because they leak the answer: departure delay, taxi times,
 
 ```bash
 pip install -r requirements.txt -r requirements-train.txt
-python scripts/make_dataset.py      # downloads BTS 2017 data, writes data/flight_delay_data.csv
-python src/train.py                 # trains all models, writes models/ and reports/
+python scripts/make_dataset.py      # downloads BTS 2017 data, writes a 500k sample (data/flight_delay_data.csv)
+python src/train.py                 # round 1 model comparison on the sample
+python scripts/make_dataset.py --full   # all 5.6M flights (data/flights_2017_full.parquet)
+python src/train_full.py            # trains the deployed models (needs the weather file too)
 uvicorn app.main:app --reload       # http://localhost:8000
 python -m pytest -q                 # tests (simulated forecasts, no network needed)
 ```
@@ -113,6 +140,6 @@ scripts/            dataset builder
 2. ~~Live forecasts in the app~~ (done: Open-Meteo forecasts for both airports, 30-minute cache, schedule-only fallback).
 3. Prediction logging plus a feedback loop: real outcomes from monthly BTS releases, a "was it delayed?" button, and monthly retraining that only ships a new model if it beats the current one.
 4. Recent BTS data (2023-2025) instead of 2017.
-5. Congestion features and previous-flight delay via tail number.
+5. Aircraft rotation in the app (+0.026 AUC in testing): look up the assigned aircraft close to departure and its other flights that day, then the previous flight's live delay.
 
 Data: US Bureau of Transportation Statistics, Reporting Carrier On-Time Performance.

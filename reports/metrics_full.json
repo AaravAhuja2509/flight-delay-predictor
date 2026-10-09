@@ -1,0 +1,19 @@
+{
+  "test_rows": 1385813,
+  "models": {
+    "schedule": {
+      "roc_auc": 0.6119,
+      "pr_auc": 0.2146,
+      "trees": 1083,
+      "threshold": 0.1829
+    },
+    "weather": {
+      "roc_auc": 0.6908,
+      "pr_auc": 0.3147,
+      "trees": 917,
+      "threshold": 0.204
+    }
+  },
+  "routes": 4422,
+  "route_airline_pairs": 7369
+}

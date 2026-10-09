@@ -1,0 +1,67 @@
+{
+  "train_rows": 1000000,
+  "test_rows": 1385813,
+  "results": [
+    {
+      "name": "A. Weather model (current)",
+      "deployable": "yes",
+      "roc_auc": 0.6908,
+      "pr_auc": 0.3147,
+      "trees": 917,
+      "top_new_features": {}
+    },
+    {
+      "name": "B. + typical congestion",
+      "deployable": "yes (lookup table)",
+      "roc_auc": 0.6897,
+      "pr_auc": 0.3153,
+      "trees": 1374,
+      "top_new_features": {
+        "d_arrs_hour_typ": 0.0158,
+        "o_deps_hour_typ": 0.0087,
+        "o_deps_day_typ": 0.0086
+      }
+    },
+    {
+      "name": "C. + same-day congestion",
+      "deployable": "needs that day's schedule",
+      "roc_auc": 0.6894,
+      "pr_auc": 0.3145,
+      "trees": 1128,
+      "top_new_features": {
+        "d_arrs_hour_typ": 0.0156,
+        "o_deps_day": 0.0123,
+        "o_deps_day_typ": 0.0078,
+        "o_deps_hour_typ": 0.0073,
+        "d_arrs_hour_day": 0.0057,
+        "o_deps_hour_day": 0.004
+      }
+    },
+    {
+      "name": "D. + aircraft rotation",
+      "deployable": "needs the plane's schedule",
+      "roc_auc": 0.719,
+      "pr_auc": 0.3785,
+      "trees": 1353,
+      "top_new_features": {
+        "turn_min": 0.0733,
+        "leg_of_day": 0.0348,
+        "d_arrs_hour_typ": 0.0136,
+        "legs_today": 0.0103,
+        "o_deps_hour_typ": 0.0079,
+        "o_deps_day_typ": 0.0076
+      }
+    }
+  ],
+  "leakage_check": {
+    "note": "Rotation features recomputed from the full schedule INCLUDING cancelled/diverted flights (cancellations cluster on bad days and could leak). Result D drops only slightly, so the gain is real.",
+    "D_full_schedule": {
+      "roc_auc": 0.7174,
+      "pr_auc": 0.369
+    },
+    "D_without_legs_today": {
+      "roc_auc": 0.7164,
+      "pr_auc": 0.3701
+    }
+  }
+}

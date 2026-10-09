@@ -1,0 +1,49 @@
+{
+  "test_rows": 1385813,
+  "test_delay_rate": 0.1484,
+  "curve": [
+    {
+      "train_rows": 100000,
+      "trees": 247,
+      "roc_auc": 0.6829,
+      "pr_auc": 0.3026,
+      "minutes": 0.4
+    },
+    {
+      "train_rows": 250000,
+      "trees": 485,
+      "roc_auc": 0.6846,
+      "pr_auc": 0.3079,
+      "minutes": 0.9
+    },
+    {
+      "train_rows": 500000,
+      "trees": 679,
+      "roc_auc": 0.6884,
+      "pr_auc": 0.3124,
+      "minutes": 1.7
+    },
+    {
+      "train_rows": 1000000,
+      "trees": 917,
+      "roc_auc": 0.6908,
+      "pr_auc": 0.3147,
+      "minutes": 3.4
+    },
+    {
+      "train_rows": 2000000,
+      "trees": 2346,
+      "roc_auc": 0.6886,
+      "pr_auc": 0.3133,
+      "minutes": 10.0
+    },
+    {
+      "train_rows": 4043597,
+      "trees": 4000,
+      "roc_auc": 0.6882,
+      "pr_auc": 0.3108,
+      "minutes": 23.0
+    }
+  ],
+  "extra": []
+}

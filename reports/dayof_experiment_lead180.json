@@ -1,0 +1,39 @@
+{
+  "lead_minutes": 180,
+  "train_rows": 1000000,
+  "test_rows": 1385813,
+  "coverage": {
+    "prev_dep_delay": 0.361,
+    "prev_arr_delay": 0.029,
+    "inbound_slack": 0.744,
+    "apt_late_share": 0.801
+  },
+  "results": [
+    {
+      "name": "E. All day-of features",
+      "roc_auc": 0.7551,
+      "pr_auc": 0.4411,
+      "trees": 1135,
+      "top_features": {
+        "Dest": 0.1536,
+        "Origin": 0.1374,
+        "inbound_slack": 0.083,
+        "apt_mean_delay": 0.0761,
+        "prev_dep_delay": 0.0692,
+        "apt_late_share": 0.0641
+      },
+      "auc_by_inbound_state": {
+        "first flight of the day": 0.7582,
+        "inbound not departed yet": 0.7384,
+        "inbound in the air": 0.7569,
+        "inbound landed": 0.7073
+      },
+      "share_by_inbound_state": {
+        "0": 0.255,
+        "1": 0.371,
+        "2": 0.343,
+        "3": 0.031
+      }
+    }
+  ]
+}

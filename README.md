@@ -103,6 +103,31 @@ curl -X POST localhost:8000/api/predict -H "Content-Type: application/json" -d \
  '{"carrier":"DL","origin":"JFK","dest":"LAX","date":"2026-12-23","dep_time":"17:30","arr_time":"20:45"}'
 ```
 
+## Round 4: day-of prediction (AUC 0.82)
+
+Days ahead, a model only knows the schedule and a forecast, and published studies land around 0.70-0.75 there too. Closer to departure, much more is known. `src/dayof_experiment.py` predicts **1 hour before departure** using only information that would really exist at that moment:
+
+- **Inbound aircraft:** the plane's previous flight today: its departure delay if it has already left, its arrival delay if it has already landed, and the resulting slack before our departure. Times from the previous airport are converted to our airport's clock via scheduled times.
+- **Origin airport right now:** share of departures in the previous 2 hours that left 15+ minutes late, and their mean delay.
+- Nothing from the flight's own departure or arrival is used.
+
+![day-of results](reports/dayof.png)
+
+| Features (1M training rows, all Oct-Dec 2017 flights as test) | ROC-AUC | PR-AUC |
+|---|---|---|
+| Current app model (schedule + weather) | 0.686 | 0.309 |
+| + aircraft rotation (schedule) | 0.712 | 0.364 |
+| + origin airport status | 0.735 | 0.404 |
+| + inbound aircraft status | 0.815 | 0.599 |
+| **All day-of features** | **0.821** | **0.609** |
+
+- **The inbound plane is the strongest signal by far**: PR-AUC doubles. Top features: inbound slack, then the previous flight's departure delay.
+- **Leakage check:** the same model predicting **3 hours** before departure scores 0.755, between the days-ahead model (0.712) and the 1-hour model (0.821). Accuracy falls smoothly as less of the inbound flight has happened, which is what honest features should do. The time logic is also unit-checked by hand on a three-leg example.
+- By inbound state at 1 hour out: inbound plane in the air 0.846, not yet departed 0.809, first flight of the day 0.762, already landed 0.727.
+- (Row A is 0.686 here vs 0.691 in round 3 only because this run draws a different random 1M training sample.)
+
+Using this in the app needs live data: the aircraft assigned to the flight and its previous flight's status (both available from flight-status APIs on the day of travel).
+
 ## Flight number lookup (optional)
 
 Type a flight number and date (e.g. `DL 423`) and the app fills in the route, airline and scheduled local times from the [AeroDataBox](https://rapidapi.com/aedbx-aedbx/api/aerodatabox) API, then runs the prediction. Multi-leg flights let you pick the leg; codeshare listings resolve to the operating airline; non-US or untrained routes are flagged instead of guessed.
@@ -140,6 +165,6 @@ scripts/            dataset builder
 2. ~~Live forecasts in the app~~ (done: Open-Meteo forecasts for both airports, 30-minute cache, schedule-only fallback).
 3. Prediction logging plus a feedback loop: real outcomes from monthly BTS releases, a "was it delayed?" button, and monthly retraining that only ships a new model if it beats the current one.
 4. Recent BTS data (2023-2025) instead of 2017.
-5. Aircraft rotation in the app (+0.026 AUC in testing): look up the assigned aircraft close to departure and its other flights that day, then the previous flight's live delay.
+5. Day-of mode in the app (AUC 0.82 in testing): for flights departing within a few hours, look up the assigned aircraft and its previous flight's live status, plus recent departure delays at the origin.
 
 Data: US Bureau of Transportation Statistics, Reporting Carrier On-Time Performance.

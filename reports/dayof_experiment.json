@@ -1,0 +1,95 @@
+{
+  "lead_minutes": 60,
+  "train_rows": 1000000,
+  "test_rows": 1385813,
+  "coverage": {
+    "prev_dep_delay": 0.728,
+    "prev_arr_delay": 0.322,
+    "inbound_slack": 0.744,
+    "apt_late_share": 0.911
+  },
+  "results": [
+    {
+      "name": "A. Current app model (schedule + weather)",
+      "roc_auc": 0.6864,
+      "pr_auc": 0.3087,
+      "trees": 922,
+      "top_features": {
+        "Dest": 0.1862,
+        "Origin": 0.1734,
+        "DepMinuteOfDay": 0.0844,
+        "Carrier": 0.0525,
+        "Month": 0.0464,
+        "ArrHour": 0.0435
+      }
+    },
+    {
+      "name": "B. + aircraft rotation (schedule)",
+      "roc_auc": 0.7124,
+      "pr_auc": 0.3638,
+      "trees": 1282,
+      "top_features": {
+        "Dest": 0.169,
+        "Origin": 0.1586,
+        "turn_min": 0.0734,
+        "DepMinuteOfDay": 0.0703,
+        "Carrier": 0.0416,
+        "Month": 0.0392
+      }
+    },
+    {
+      "name": "C. + inbound aircraft status at T-60",
+      "roc_auc": 0.8147,
+      "pr_auc": 0.5986,
+      "trees": 969,
+      "top_features": {
+        "inbound_slack": 0.2821,
+        "prev_dep_delay": 0.1244,
+        "Dest": 0.102,
+        "Origin": 0.0876,
+        "leg_of_day": 0.0689,
+        "DepMinuteOfDay": 0.0452
+      }
+    },
+    {
+      "name": "D. + origin airport status at T-60",
+      "roc_auc": 0.7347,
+      "pr_auc": 0.4036,
+      "trees": 1178,
+      "top_features": {
+        "Dest": 0.1594,
+        "Origin": 0.1403,
+        "apt_late_share": 0.1206,
+        "apt_mean_delay": 0.105,
+        "turn_min": 0.0815,
+        "Carrier": 0.0369
+      }
+    },
+    {
+      "name": "E. All day-of features",
+      "roc_auc": 0.8214,
+      "pr_auc": 0.6088,
+      "trees": 987,
+      "top_features": {
+        "inbound_slack": 0.2652,
+        "prev_dep_delay": 0.1691,
+        "Dest": 0.1015,
+        "Origin": 0.0799,
+        "apt_late_share": 0.0536,
+        "leg_of_day": 0.0371
+      },
+      "auc_by_inbound_state": {
+        "first flight of the day": 0.7624,
+        "inbound not departed yet": 0.8088,
+        "inbound in the air": 0.8462,
+        "inbound landed": 0.727
+      },
+      "share_by_inbound_state": {
+        "0": 0.255,
+        "1": 0.012,
+        "2": 0.383,
+        "3": 0.349
+      }
+    }
+  ]
+}
